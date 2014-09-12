@@ -2,22 +2,44 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } html, body { height: 100%; } body { background: #fff; line-height: 1; } :focus { outline: 0; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
 
 /* Fonts (including not standart fonts) */
-/*@font-face {
-	
-	font-family: "Example";
-	src: url("../fonts/Example/regular.eot");
-	src: url("../fonts/Example/regular.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/Example/regular.woff") format("woff"),
-		 url("../fonts/Example/regular.ttf") format("truetype");
+
+@font-face {
+
+	font-family: "Europe";
+	src: url("../fonts/Europe/regular.eot");
+	src: url("../fonts/Europe/regular.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/Europe/regular.woff") format("woff"),
+		 url("../fonts/Europe/regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
-}*/
+}
 
+@font-face {
+
+	font-family: "EuropeDemi";
+	src: url("../fonts/EuropeDemi/regular.eot");
+	src: url("../fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/EuropeDemi/regular.woff") format("woff"),
+		 url("../fonts/EuropeDemi/regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+
+	font-family: "EuropeDemi";
+	src: url("../fonts/EuropeDemi/regular.eot");
+	src: url("../fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/EuropeDemi/regular.woff") format("woff"),
+		 url("../fonts/EuropeDemi/regular.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
 
 /* Common (common styles) */
 body, input, textarea, select, button {
 	
-	font-family: Arial, sans-serif;
+	font-family: "Europe", Arial, sans-serif;
 }
 
 body {
@@ -120,7 +142,6 @@ button::-moz-focus-inner {
 	height: 88px;
 	background: #d60a05;
 	position: relative;
-	overflow: hidden;
 	color: #fff;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
 	box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -252,7 +273,7 @@ button::-moz-focus-inner {
 	.b-primary-menu .b-primary-menu-clause {
 
 		display: inline-block;
-		font-family: "EuropeDemi Regular", sans-serif;
+		font-family: "EuropeDemi", sans-serif;
 		font-size: 16px;
 		line-height: 28px;
 		text-transform: uppercase;
@@ -266,6 +287,65 @@ button::-moz-focus-inner {
 			color: #fff;
 			text-decoration: none;
 		}
+		.b-primary-menu .b-primary-menu-clause .b-primary-menu-clause-link:hover {
+
+			padding: 0 21px 32px;
+			margin: 0 -21px -32px;
+			position: relative;
+		}
+
+		.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu {
+
+			display: none;
+		}
+		.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu:hover, 
+		.b-primary-menu .b-primary-menu-clause .b-primary-menu-clause-link:hover + .b-primary-sub-menu {
+
+			display: block;
+			position: absolute;
+			z-index: 100;
+			top: 88px;
+			left: 50%;
+			height: 290px;
+			width: 1366px;
+			border-left: 800px solid rgba(0,0,0,.8);
+			border-right: 800px solid rgba(0,0,0,.8);
+			margin-left: -1483px;
+			padding: 20px 0;
+			background: rgba(0,0,0,.8);
+		}
+
+			.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-clause {
+
+				margin: 0 30px 15px 260px;
+				width: 200px;
+				color: #fff;
+				text-transform: none;
+				font-family: "Europe", sans-serif;
+			} 
+
+				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-clause .b-primary-sub-menu-clause-link {
+
+					color: #fff;
+					text-decoration: none;
+				} 
+
+			.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause {
+
+				position: absolute;
+				width: 482px;
+				height: 290px;
+				margin: 0;
+				top: 20px;
+				right: 290px;
+			} 
+
+				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause .b-primary-sub-menu-picture-clause-entity {
+
+					width: 482px;
+					height: 290px;
+					border-radius: 5px;
+				} 
 
 		.b-primary-menu .b-primary-menu-tickets-clause .b-primary-menu-clause-link {
 
@@ -275,9 +355,16 @@ button::-moz-focus-inner {
 			border-radius: 4px;
 			color: #d60a05;
 		}
+		.b-primary-menu .b-primary-menu-tickets-clause .b-primary-menu-clause-link:hover {
+
+			padding: 5px 20px;
+			margin: -10px 0;
+			background: #fafafa;
+		}
 
 .b-general-phone {
 
+	font-family: "EuropeDemi", sans-serif;
 	display: block;
 	font-size: 16px;
 	line-height: 20px;
@@ -397,6 +484,7 @@ button::-moz-focus-inner {
 
 .b-auxiliary-menu {
 
+	font-family: "EuropeDemi", sans-serif;
 	max-width: 100px;
 	font-size: 12px;
 	line-height: 16px;
@@ -437,6 +525,7 @@ button::-moz-focus-inner {
 
 	.b-mailing-form .b-form-title {
 
+		font-family: "EuropeDemi", sans-serif;
 		font-size: 14px;
 		line-height: 30px;
 		padding-bottom: 5px;
@@ -565,6 +654,7 @@ button::-moz-focus-inner {
 
 	.b-phone-section .b-phone-section-contents {
 
+		font-family: "EuropeDemi", sans-serif;
 		font-size: 15px;
 		line-height: 30px;
 		text-transform: uppercase;
