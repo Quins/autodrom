@@ -176,7 +176,7 @@ button::-moz-focus-inner {
 
 .l-content {
 
-	background: #002;
+	background: #1b1b1b;
 	color: #fff;
 }
 
@@ -793,6 +793,7 @@ button::-moz-focus-inner {
 		top: 215px;
 		width: 54px;
 		height: 54px;
+		text-indent: -9999px;
 		background-color: transparent;
 		background-image: url(../i/graphics.png);
 	}
@@ -809,7 +810,83 @@ button::-moz-focus-inner {
 		background-position: -70px -165px;
 	}
 
+.b-partners-collection {
 
+	background: #111;
+	border-radius: 5px;
+	margin: 0 58px 15px;
+	position: relative;
+}
+
+	.b-partners-collection .b-partners-collection-inside {
+
+		margin: 0 100px;
+		text-align: center;
+		font-size: 0;
+		overflow: hidden;
+	}
+
+	.b-partners-collection .b-partners-collection-title {
+
+		font-family: "EuropeDemi", sans-serif;
+		font-size: 24px;
+		line-height: 26px;
+		text-transform: uppercase;
+		padding: 18px;
+	}
+
+	.b-partners-collection .b-partners-article {
+
+		display: inline-block;
+		padding: 15px 25px;
+		max-width: 220px;
+		height: 110px;
+	}
+
+		.b-partners-collection .b-partners-article .b-partners-article-link {
+
+			display: block;
+		}
+
+		.b-partners-collection .b-partners-article .b-partners-article-picture {
+
+			display: block;
+			height: 110px;
+			line-height: 110px;
+			text-align: center;
+		}
+
+			.b-partners-collection .b-partners-article .b-partners-article-picture .b-partners-article-picture-entity {
+
+				display: inline-block;
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+	.b-partners-rotating-collection .b-partners-rotating-collection-roller {
+
+		position: absolute;
+		top: 50%;
+		margin-top: -4px;
+		width: 54px;
+		height: 54px;
+		opacity: .5;
+		text-indent: -9999px;
+		background-color: transparent;
+		background-image: url(../i/graphics.png);
+	}
+
+	.b-partners-rotating-collection .b-partners-rotating-collection-backward-roller {
+
+		left: 43px;
+		background-position: 0 -165px;
+	}
+
+	.b-partners-rotating-collection .b-partners-rotating-collection-forward-roller {
+
+		right: 43px;
+		background-position: -70px -165px;
+	}
 
 
 
