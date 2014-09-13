@@ -782,4 +782,35 @@ button::-moz-focus-inner {
 			border-radius: 0 0 5px 5px;
 		}
 
+.b-news-rotating-collection {
+
+	position: relative;
+}
+
+	.b-news-rotating-collection .b-news-rotating-collection-roller {
+
+		position: absolute;
+		top: 215px;
+		width: 54px;
+		height: 54px;
+		background-color: transparent;
+		background-image: url(../i/graphics.png);
+	}
+
+	.b-news-rotating-collection .b-news-rotating-collection-backward-roller {
+
+		left: -11px;
+		background-position: 0 -165px;
+	}
+
+	.b-news-rotating-collection .b-news-rotating-collection-forward-roller {
+
+		right: -11px;
+		background-position: -70px -165px;
+	}
+
+
+
+
+
 
