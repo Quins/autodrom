@@ -724,6 +724,12 @@ button::-moz-focus-inner {
 				border-radius: 5px;
 			}
 
+			.b-news-collection .b-news-collection-guide .b-news-collection-guide-current-clause .b-news-collection-guide-clause-link {
+
+				border-color: #fff;
+				background: transparent;
+			}
+
 	.b-news-collection .b-news-article {
 
 		width: 368px;
@@ -887,6 +893,145 @@ button::-moz-focus-inner {
 		right: 43px;
 		background-position: -70px -165px;
 	}
+
+.b-posts-collection {
+
+	padding: 0 47px 30px 58px;
+	font-size: 0;
+}
+
+	.b-posts-collection .b-posts-collection-title {
+
+		padding: 17px 20px 17px 18px;
+		display: inline-block;
+		vertical-align: top;
+		font-family: "EuropeDemi", sans-serif;
+		text-transform: uppercase;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.b-posts-collection .b-posts-collection-guide {
+
+		padding: 17px 0;
+		display: inline-block;
+		font-family: "EuropeDemi", sans-serif;
+		text-transform: uppercase;
+		font-size: 0;
+		line-height: 32px;
+	}
+
+		.b-posts-collection .b-posts-collection-guide .b-posts-collection-guide-clause {
+
+			display: inline-block;
+			font-size: 14px;
+			line-height: 28px;
+			margin-right: 7px;
+			vertical-align: middle;
+		}
+
+			.b-posts-collection .b-posts-collection-guide .b-posts-collection-guide-clause .b-posts-collection-guide-clause-link {
+
+				display: block;
+				padding: 0 18px;
+				color: #fff;
+				text-decoration: none;
+				border: 2px solid #6a7e8e;
+				background: #6a7e8e;
+				border-radius: 5px;
+			}
+
+			.b-posts-collection .b-posts-collection-guide .b-posts-collection-guide-current-clause .b-posts-collection-guide-clause-link {
+
+				border-color: #fff;
+				background: transparent;
+			}
+
+	.b-posts-collection .b-posts-collection-column {
+
+		display: inline-block;
+		width: 224px;
+		padding-right: 11px;
+		vertical-align: top;
+		font-size: 12px;
+	}
+
+		.b-posts-collection .b-posts-article {
+
+			display: block;
+			background: #fff;
+			color: #444;
+			border-radius: 5px 5px 0 0;
+		}
+
+			.b-posts-collection .b-posts-article .b-posts-article-contents {
+
+				padding: 21px 13px 0;
+				font-family: 'Arial', sans-serif;
+			}
+
+			.b-posts-collection .b-posts-article .b-posts-article-actions-collection {
+
+				text-align: right;
+				font-size: 0;
+				padding: 5px 20px 15px;
+				line-height: 20px;
+			}
+
+				.b-posts-collection .b-posts-article .b-posts-article-actions-collection .b-posts-article-actions-collection-clause {
+
+					display: inline-block;
+					vertical-align: middle;
+					width: 14px;
+					height: 14px;
+					background: blue;
+					margin-left: 4px;
+				}
+
+			.b-posts-collection .b-posts-article .b-posts-article-meta {
+
+				padding: 13px 13px 13px 35px;
+				font-family: 'Arial', sans-serif;
+				color: #fff;
+				position: relative;
+			}
+			.b-posts-collection .b-posts-twitter-article .b-posts-article-meta {
+
+				background: #48c2de;
+			}
+			.b-posts-collection .b-posts-facebook-article .b-posts-article-meta {
+
+				background: #39579a;
+			}
+
+			.b-posts-collection .b-posts-article .b-posts-article-meta:before {
+
+				content: '';
+				position: absolute;
+				display: block;
+				left: 10px;
+				top: 50%;
+			}
+			.b-posts-collection .b-posts-twitter-article .b-posts-article-meta:before {
+
+				width: 17px;
+				height: 15px;
+				margin-top: -8px;
+				background: url(../i/graphics.png) -120px -25px no-repeat;
+			}
+			.b-posts-collection .b-posts-facebook-article .b-posts-article-meta:before {
+
+				width: 10px;
+				height: 21px;
+				margin-top: -10px;
+				background: url(../i/graphics.png) -146px -25px no-repeat;
+			}
+
+				.b-posts-collection .b-posts-article .b-posts-article-meta .b-posts-article-meta-link {
+
+					color: #fff;
+					margin-right: 5px;
+				}
 
 
 
