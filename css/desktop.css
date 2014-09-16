@@ -751,6 +751,16 @@ button::-moz-focus-inner {
 		background-position: -225px -25px;
 	}
 
+		.b-sociality-menu .b-sociality-menu-clause .b-sociality-menu-clause-link {
+
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 2px;
+			margin: -2px;
+			position: relative;
+		}
+
 .b-phone-section {
 
 	display: block;
