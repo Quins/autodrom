@@ -27,6 +27,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$("[data-reel]").reels({
+
+		"partners-index": {
+
+			offsetWidth: 190, 
+			visibleFrameClass: "b-partners-visible-article"
+		}
+	});
 
     if($("[data-tabulator]").length)
         initializeTabulators();
@@ -117,6 +125,98 @@ $(document).ready(function() {
 	};
 })(jQuery);
 
+/* Reels */
+
+(function( $ ) {
+	$.fn.reels = function(options) {
+
+		return this.each( function() {
+
+			var reel = {
+				descriptor: ($(this).data("reel-descriptor") ? $(this).data("reel-descriptor") : ""), 
+				framesRepository: ($(this).find("[data-reel-frames-repository]") ? $(this).find("[data-reel-frames-repository]").first() : $(this)), 
+				frames: [],
+				currentFrameOffset: 0, 
+				forwardRollers: $(this).find("[data-reel-roller][data-reel-roller-descriptor='forward']"), 
+				backwardRollers: $(this).find("[data-reel-roller][data-reel-roller-descriptor='backward']")
+			};
+
+			reel.framesRepository.css("overflow", "hidden");
+
+			reel.properties = $.extend({
+				visibleFrameClass: "g-visible",
+				offsetWidth: reel.framesRepository.find("[data-reel-frame]").first().width()
+			}, options[reel.descriptor]);
+
+			reel.framesRepository.find("[data-reel-frame]").each( function(i) {
+
+				reel.frames[i] = {
+
+					entity: $(this),
+					width: parseInt($(this).width()),
+					visible: false
+				}
+			});
+
+			reel.lastFrameOffset = reel.frames.length - Math.floor(reel.framesRepository.width() / reel.properties.offsetWidth) + 1;
+
+			reel.forwardRollers.each( function() {
+
+				$(this).click( function(event) {
+
+					event.preventDefault();
+					leftOffset(reel.currentFrameOffset + 1);
+				});
+			});
+
+			reel.backwardRollers.each( function() {
+
+				$(this).click( function(event) {
+
+					event.preventDefault();
+					leftOffset(reel.currentFrameOffset - 1);
+				});
+			});
+
+			function leftOffset(offsetFrame) {
+
+				var toMargin = 0;
+
+				if (offsetFrame === undefined || offsetFrame > reel.lastFrameOffset || offsetFrame < 0) 
+					return false;
+
+				for (var i = 0; i < reel.lastFrameOffset; i++) {
+
+					if (i < offsetFrame) {
+						reel.frames[i].entity.css({
+							"overflow": "hidden"
+						}).animate({
+							"width": 0
+						}, 300, function() {
+							$(this).css({
+								"display": "none"
+							});
+						});
+					} else if (reel.frames[i].entity.width() < reel.properties.offsetWidth) {
+						reel.frames[i].entity.css({
+							"overflow": "hidden",
+							"display": "inline-block"
+						}).animate({
+							"width": reel.properties.offsetWidth
+						}, 300, function() {
+							$(this).css({
+								"overflow": "visible"
+							});
+						});
+					}
+				};
+
+				reel.currentFrameOffset = offsetFrame;
+			}
+		});
+	};
+})(jQuery);
+
 /* Tabulators */
 var tabulators = {};
 var tabulatorsProperties = {
@@ -124,6 +224,10 @@ var tabulatorsProperties = {
     "news-index": {
 
         tabsCurrentAdditionalClass: "b-news-collection-guide-current-clause"
+    }, 
+    "social-index": {
+
+        tabsCurrentAdditionalClass: "b-posts-collection-guide-current-clause"
     }
 };
 
