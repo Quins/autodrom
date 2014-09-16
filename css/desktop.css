@@ -177,7 +177,7 @@ button::-moz-focus-inner {
 
 .l-content {
 
-	background: #1b1b1b;
+	background: #1b1b1b url(../i/bg.jpg) repeat;
 	color: #fff;
 	position: relative;
 }
@@ -198,23 +198,6 @@ button::-moz-focus-inner {
 		height: 1336px;
 		background-image: url(../i/main-background.jpg);
 		background-color: #1b1b1b;
-	}
-	.p-main .l-content .l-content-background:after {
-
-		content: "";
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height: 300px;
-		background: -moz-linear-gradient(top, transparent 0%, #1b1b1b 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, #111));
-		background: -webkit-linear-gradient(top, transparent 0%, #1b1b1b 100%);
-		background: -o-linear-gradient(top, transparent 0%, #1b1b1b 100%);
-		background: -ms-linear-gradient(top, transparent 0%, #1b1b1b 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#111', GradientType=0 );
-		background: linear-gradient(to bottom, transparent 0%, #1b1b1b 100%);
 	}
 
 	.l-content .l-content-inside {
