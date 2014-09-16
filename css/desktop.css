@@ -600,6 +600,19 @@ button::-moz-focus-inner {
 			text-transform: uppercase;
 		}
 
+		.b-mailing-form .b-form-email-fieldset .b-form-fieldset-input::-webkit-input-placeholder {
+			color: #fff;
+		}
+		.b-mailing-form .b-form-email-fieldset .b-form-fieldset-input:-moz-placeholder { 
+			color: #fff;
+		}
+		.b-mailing-form .b-form-email-fieldset .b-form-fieldset-input::-moz-placeholder { 
+			color: #fff;
+		}
+		.b-mailing-form .b-form-email-fieldset .b-form-fieldset-input:-ms-input-placeholder { 
+			color: #fff;
+		}
+
 	.b-mailing-form .b-form-submit-fieldset {
 
 		width: 45px;
