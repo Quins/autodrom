@@ -1,4 +1,4 @@
-@media (min-width: 1366px) {
+@media (min-width: 1300px) {
 
 	.g-portable {
 
@@ -6,7 +6,47 @@
 	}
 }
 
-@media (max-width: 1365px) {
+@media (max-width: 1299px) {
+
+.l-header {
+
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+}
+
+	.l-header:before {
+
+		content: none;
+		display: none;
+	}
+
+	.l-header-righthand-section {
+
+		display: none;
+	}
+
+.b-logo {	
+
+	height: 50px;
+}
+
+	.b-logo:after {
+
+		border-width: 25px;
+		margin-right: -50px;
+	}
+
+.b-primary-menu {
+
+	display: none;
+}
+
+.l-content {
+
+	margin-top: 50px;
+}
 
 	.b-navigation {
 
@@ -14,6 +54,30 @@
 		top: 0;
 		left: -280px;
 		width: 280px;
+	}
+
+.b-caption {
+
+	padding: 10px 17px 30px;
+}
+
+	.b-caption .b-caption-title {
+
+		float: none;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.b-caption .b-caption-description {
+
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.b-caption .b-caption-sociality-menu {
+
+		top: 10px;
+		right: 17px;
 	}
 
 }
