@@ -1,9 +1,39 @@
 $(document).ready(function() {
 
-	$("[data-counter]").counter("19/09/2014 19:30");
+	$("[data-counter]").counter("19/09/2014 10:30");
 
-	$("[data-waterwheelcarousel]").waterwheelCarousel();
-	
+	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
+
+		activeClassName: "b-pictures-current-article"
+	});
+
+	$("[data-waterwheelcarousel-roller]").each( function() {
+
+		var direction = $(this).data("waterwheelcarousel-roller-direction");
+		if (direction == 'forward') {
+
+			$(this).click( function(event) {
+
+				event.preventDefault();
+				waterwheel.next();
+			});
+		} else if (direction == 'backward') {
+
+			$(this).click( function(event) {
+
+				event.preventDefault();
+				waterwheel.prev();
+			});
+		}
+	});
+
+
+    if($("[data-tabulator]").length)
+        initializeTabulators();
+
+    if($("[data-rotator]").length)
+        initializeRotators();
+
 });
 
 /* Counter */
@@ -53,7 +83,7 @@ $(document).ready(function() {
 				var difference = target.getTime() - now.getTime();
 				difference = new Date(difference);
 
-				var tmparray = difference.getDay().toString().split("");
+				var tmparray = ('00' + difference.getDay()).slice(-3).toString().split("");
 				days.entity.empty();
 				$.each(tmparray, function(i, e) {
 
@@ -86,6 +116,303 @@ $(document).ready(function() {
 		});
 	};
 })(jQuery);
+
+/* Tabulators */
+var tabulators = {};
+var tabulatorsProperties = {
+
+    "news-index": {
+
+        tabsCurrentAdditionalClass: "b-news-collection-guide-current-clause"
+    }
+};
+
+function initializeTabulators() {
+
+    $("[data-tabulator]").each(function() {
+
+        var tabulatorID = generateIdentificator();
+        var tabulatorDescriptor = ($(this).attr("data-tabulator-descriptor") ? $(this).attr("data-tabulator-descriptor") : "");
+
+        tabulators[tabulatorID] = {
+
+            tabulator: $(this),
+            tabs: $(this).find("[data-tabulator-tab]"),
+            currentTab: null,
+            tabsRepository: $(this).find("[data-tabulator-tabs-repository]"),
+            contents: $(this).find("[data-tabulator-tab-contents]"),
+            properties: (tabulatorsProperties[tabulatorDescriptor] ? tabulatorsProperties[tabulatorDescriptor] : {})
+        };
+
+        tabulators[tabulatorID].tabs.each(function() {
+
+            var tab = $(this);
+            var tabDescriptor = ($(this).attr("data-tabulator-tab-descriptor") ? $(this).attr("data-tabulator-tab-descriptor") : "");
+
+            if(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass && tabulators[tabulatorID].tabs.filter("." + tabulators[tabulatorID].properties.tabsCurrentAdditionalClass))
+                tabulators[tabulatorID].currentTab = tabulators[tabulatorID].tabs.filter("." + tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+
+            tab.find("[data-tabulator-tab-link]").click(function() {
+
+                if(!tabulators[tabulatorID].currentTab || (tabulators[tabulatorID].currentTab && !tab.hasClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass))) {
+
+                    tabulators[tabulatorID].currentTab.toggleClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+                    tab.toggleClass(tabulators[tabulatorID].properties.tabsCurrentAdditionalClass);
+
+                    tabulators[tabulatorID].contents.not("[class*='g-hidden']").toggleClass("g-hidden");
+                    tabulators[tabulatorID].contents.filter("[data-tabulator-tab-contents-descriptor='" + tabDescriptor + "']").toggleClass("g-hidden");
+
+                    if(tabulators[tabulatorID].contents.filter("[data-tabulator-tab-contents-descriptor='" + tabDescriptor + "']").find(".b-news-previews").length) {
+
+                        tabulators[tabulatorID].contents.filter("[data-tabulator-tab-contents-descriptor='" + tabDescriptor + "']").find("[data-pack]").forcePack(-1);
+                    }
+
+                    tabulators[tabulatorID].currentTab = tab;
+                }
+
+                return false;
+            });
+
+            if(tabulators[tabulatorID].properties.initializeFunction)
+                executeFunction(tabulators[tabulatorID].properties.initializeFunction, null, tabulatorID);
+        });
+    });
+}
+
+
+/* Rotators */
+var rotators = {};
+var rotatorsProperties = {
+
+    "news-index": {
+
+        animation: "displaying"
+    }
+};
+
+function initializeRotators() {
+
+    $("[data-rotator]").each(function() {
+
+        var rotatorID = generateIdentificator();
+        var rotatorDescriptor = ($(this).attr("data-rotator-descriptor") ? $(this).attr("data-rotator-descriptor") : "");
+
+        rotators[rotatorID] = {
+
+            rotator: $(this),
+            descriptor: rotatorDescriptor,
+            articles: $(this).find("[data-rotator-article]"),
+            articleWidth: $(this).find("[data-rotator-article]").eq(0).width(),
+            articlesCount: $(this).find("[data-rotator-article]").length,
+            articlesDistance: (parseInt($(this).find("[data-rotator-article]").last().css("marginLeft")) ? parseInt($(this).find("[data-rotator-article]").last().css("marginLeft")) : 0),
+            articlesRepository: ($(this).find("[data-rotator-articles-repository]").length ? $(this).find("[data-rotator-articles-repository]") : $(this)),
+            articlesRepositoryWidth: ($(this).find("[data-rotator-articles-repository]").length ? $(this).find("[data-rotator-articles-repository]").width() : $(this).width()),
+            rollers: {
+
+                backward: ($(this).find("[data-rotator-roller][data-rotator-roller-descriptor='backward']").length ? $(this).find("[data-rotator-roller][data-rotator-roller-descriptor='backward']") : null),
+                forward: ($(this).find("[data-rotator-roller][data-rotator-roller-descriptor='forward']").length ? $(this).find("[data-rotator-roller][data-rotator-roller-descriptor='forward']") : null)
+            },
+            currentPosition: 0,
+            positionsPoints: ($(this).find("[data-rotator-points-article]").length ? $(this).find("[data-rotator-points-article]") : null),
+            positionsPointsRepository: $(this).find("[data-rotator-points]"),
+            currentPositionsPoint: $(this).find("[data-rotator-points-article][data-rotator-points-article-descriptor='current']"),
+			paused: false,
+            properties: (rotatorsProperties[rotatorDescriptor] ? rotatorsProperties[rotatorDescriptor] : {})
+        }
+
+        rotators[rotatorID].articlesRepository.scrollLeft(0);
+
+        rotators[rotatorID].rotator.attr("data-rotator-identificator", rotatorID);
+
+        rotators[rotatorID].viewedArticlesCount = Math.ceil(rotators[rotatorID].articlesRepositoryWidth / (rotators[rotatorID].articleWidth + rotators[rotatorID].articlesDistance));
+
+        if(rotators[rotatorID].rollers.backward) {
+
+            rotators[rotatorID].rollers.backward.click(function(event) {
+
+                event.preventDefault();
+                turnRotator(rotatorID, "backward");
+            });
+        }
+
+        if(rotators[rotatorID].rollers.forward) {
+
+            if(rotators[rotatorID].properties.rollersDisabledClass && rotators[rotatorID].articlesCount > rotators[rotatorID].viewedArticlesCount)
+                rotators[rotatorID].rollers.forward.toggleClass(rotators[rotatorID].properties.rollersDisabledClass);
+
+            rotators[rotatorID].rollers.forward.click(function(event) {
+
+                event.preventDefault();
+                turnRotator(rotatorID, "forward");
+            });
+        }
+
+        if(rotators[rotatorID].properties.swipe) {
+
+            rotators[rotatorID].swipeStatus = false;
+            rotators[rotatorID].swipePositions = {};
+
+            rotators[rotatorID].rotator.on("touchstart mousedown", function (e) {
+
+                rotators[rotatorID].swipeStatus = true;
+                rotators[rotatorID].swipePositions = {
+
+                    x: e.originalEvent.pageX,
+                    y: e.originalEvent.pageY
+                };
+            });
+
+            rotators[rotatorID].rotator.on("touchend mouseup", function (e) {
+
+                rotators[rotatorID].swipeStatus = false;
+                rotators[rotatorID].swipePositions = null;
+            });
+
+            rotators[rotatorID].rotator.on( "touchmove mousemove", function (e) {
+
+                if (!rotators[rotatorID].swipeStatus)
+                    return;
+
+                if(Math.abs(getSwipeInformation(e, rotators[rotatorID].swipePositions).offset.x) > (rotators[rotatorID].articleWidth / 3)) {
+
+                    turnRotator(rotatorID, (getSwipeInformation(e, rotators[rotatorID].swipePositions).direction.x == "left" ? "forward" : "backward"));
+
+                    rotators[rotatorID].swipePositions = {
+
+                        x: e.originalEvent.pageX,
+                        y: e.originalEvent.pageY
+                    };
+                }
+
+                e.preventDefault();
+            });
+        }
+
+        if(rotators[rotatorID].properties.automation)
+            rotators[rotatorID].automationID = setInterval("turnRotator('" + rotatorID +"', 'forward')", rotators[rotatorID].properties.automationInterval);
+
+        if(rotators[rotatorID].properties.initializeFunction)
+            executeFunction(rotators[rotatorID].properties.initializeFunction, null, rotatorID);
+    });
+}
+
+function turnRotator(rotatorID, direction) {
+	
+	if(rotators[rotatorID].paused)
+		return false;
+	
+	rotators[rotatorID].paused = true;
+
+    if(rotators[rotatorID].properties.animation == "conveyor") {
+
+        var animation = { scrollLeft: ((direction == "forward") ? "+" : "-") + "=" + (rotators[rotatorID].articleWidth + rotators[rotatorID].articlesDistance)};
+
+        if(rotators[rotatorID].properties.cycle) {
+
+            if(direction == "backward") {
+
+                rotators[rotatorID].rotator.find("[data-rotator-article]").filter(":last").clone(true).prependTo(rotators[rotatorID].articlesRepository);
+                rotators[rotatorID].rotator.find("[data-rotator-article]").filter(":last").remove();
+
+                rotators[rotatorID].articlesRepository.scrollLeft((rotators[rotatorID].articleWidth + rotators[rotatorID].articlesDistance));
+
+                rotators[rotatorID].articlesRepository.stop(true, true).animate(animation, 350, function () {
+                	
+					rotators[rotatorID].paused = false;
+                });
+
+            } else {
+
+                rotators[rotatorID].rotator.find("[data-rotator-article]").filter(":first").clone(true).appendTo(rotators[rotatorID].articlesRepository);
+
+                rotators[rotatorID].articlesRepository.stop(true, true).animate(animation, 350, function() {
+
+                    rotators[rotatorID].rotator.find("[data-rotator-article]").filter(":first").remove();
+                    rotators[rotatorID].articlesRepository.scrollLeft(0);
+					
+					rotators[rotatorID].paused = false;
+                });
+
+            }
+
+        } else {
+
+            if((direction == "forward" && rotators[rotatorID].currentPosition < (rotators[rotatorID].articlesCount - rotators[rotatorID].viewedArticlesCount)) || (direction == "backward" && rotators[rotatorID].currentPosition > 0))
+                rotators[rotatorID].articlesRepository.stop(true, true).animate(animation, 350);
+            else
+                return false;
+        }
+
+        rotators[rotatorID].currentPosition = ((direction == "forward") ? (rotators[rotatorID].currentPosition + 1) : (rotators[rotatorID].currentPosition - 1));
+
+        if(rotators[rotatorID].properties.rollersDisabledClass && ((rotators[rotatorID].currentPosition > 0 && rotators[rotatorID].rollers.backward.hasClass(rotators[rotatorID].properties.rollersDisabledClass)) || (rotators[rotatorID].currentPosition == 0 && !rotators[rotatorID].rollers.backward.hasClass(rotators[rotatorID].properties.rollersDisabledClass))))
+            rotators[rotatorID].rollers.backward.toggleClass(rotators[rotatorID].properties.rollersDisabledClass);
+
+        if(rotators[rotatorID].properties.rollersDisabledClass && ((rotators[rotatorID].currentPosition < (rotators[rotatorID].articlesCount - rotators[rotatorID].viewedArticlesCount) && rotators[rotatorID].rollers.forward.hasClass(rotators[rotatorID].properties.rollersDisabledClass)) || (rotators[rotatorID].currentPosition == (rotators[rotatorID].articlesCount - rotators[rotatorID].viewedArticlesCount) && !rotators[rotatorID].rollers.forward.hasClass(rotators[rotatorID].properties.rollersDisabledClass))))
+            rotators[rotatorID].rollers.forward.toggleClass(rotators[rotatorID].properties.rollersDisabledClass);
+
+    } else if(rotators[rotatorID].properties.animation == "displaying") {
+
+        rotators[rotatorID].articles.eq(rotators[rotatorID].currentPosition).animate({ opacity: 0 }, 350, function() {
+
+            $(this).addClass("g-hidden");
+
+            if(direction == "forward")
+                rotators[rotatorID].currentPosition = (((rotators[rotatorID].currentPosition + 1) < rotators[rotatorID].articlesCount) ? (rotators[rotatorID].currentPosition + 1) : 0);
+            else
+                rotators[rotatorID].currentPosition = (((rotators[rotatorID].currentPosition - 1) >= 0) ? (rotators[rotatorID].currentPosition - 1) : (rotators[rotatorID].articlesCount - 1));
+
+            rotators[rotatorID].articles.eq(rotators[rotatorID].currentPosition).css("opacity", "0").removeClass("g-hidden").animate({ opacity: 1 }, 350);
+
+            if(rotators[rotatorID].positionsPoints && rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass) {
+
+                rotators[rotatorID].currentPositionsPoint
+                    .toggleClass(rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass)
+                    .removeAttr("data-rotator-positions-point-descriptor");
+
+                rotators[rotatorID].positionsPoints.eq(rotators[rotatorID].currentPosition)
+                    .addClass(rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass)
+                    .attr("data-rotator-positions-point-descriptor", "current");
+
+                rotators[rotatorID].currentPositionsPoint = rotators[rotatorID].positionsPoints.eq(rotators[rotatorID].currentPosition);
+            }
+			
+			rotators[rotatorID].paused = false;
+
+            return true;
+        });
+
+    } else if(rotators[rotatorID].properties.animation == "swipe") {
+
+
+
+    } else if(!rotators[rotatorID].properties.animation || rotators[rotatorID].properties.animation == "simple") {
+
+        rotators[rotatorID].articles.eq(rotators[rotatorID].currentPosition).addClass("g-hidden");
+
+        if(direction == "forward")
+            rotators[rotatorID].currentPosition = (((rotators[rotatorID].currentPosition + 1) < rotators[rotatorID].articlesCount) ? (rotators[rotatorID].currentPosition + 1) : 0);
+        else
+            rotators[rotatorID].currentPosition = (((rotators[rotatorID].currentPosition - 1) >= 0) ? (rotators[rotatorID].currentPosition - 1) : (rotators[rotatorID].articlesCount - 1));
+
+        rotators[rotatorID].articles.eq(rotators[rotatorID].currentPosition).removeClass("g-hidden");
+		
+		rotators[rotatorID].paused = false;
+    }
+
+    if(rotators[rotatorID].positionsPoints && rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass) {
+
+        rotators[rotatorID].currentPositionsPoint
+            .toggleClass(rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass)
+            .removeAttr("data-rotator-positions-point-descriptor");
+
+        rotators[rotatorID].positionsPoints.eq(rotators[rotatorID].currentPosition)
+            .addClass(rotators[rotatorID].properties.positionsPointsCurrentAdditionalClass)
+            .attr("data-rotator-positions-point-descriptor", "current");
+
+        rotators[rotatorID].currentPositionsPoint = rotators[rotatorID].positionsPoints.eq(rotators[rotatorID].currentPosition);
+    }
+}
 
 /* Unsorted */
 function executeFunction(name, context) {

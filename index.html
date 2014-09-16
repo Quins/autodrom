@@ -8,7 +8,7 @@
 	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="css/miserable-browsers/internet-explorer-8.css" media="all"><![endif]-->
 	<!--[if IE 9]><link rel="stylesheet" type="text/css" href="css/miserable-browsers/internet-explorer-9.css" media="all"><![endif]-->
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.waterwheelCarousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.waterwheel.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 </head>
 <body class="p-main">
@@ -316,20 +316,82 @@
 
 					<section class="b-page-sociality"></section>
 
-					<section class="b-news-collection b-news-rotating-collection">
+					<section class="b-news-collection b-news-rotating-collection" data-tabulator="true" data-tabulator-descriptor="news-index">
 						<h1 class="b-news-collection-title">Новости</h1>
-						<ul class="b-news-collection-guide">
-							<li class="b-news-collection-guide-clause b-news-collection-guide-current-clause">
-								<a href="#" class="b-news-collection-guide-clause-link">Трасса</a>
+						<ul class="b-news-collection-guide" data-tabulator-tabs-repository="true">
+							<li class="b-news-collection-guide-clause b-news-collection-guide-current-clause" data-tabulator-tab="true" data-tabulator-tab-descriptor="route">
+								<a href="#" class="b-news-collection-guide-clause-link" data-tabulator-tab-link="true">Трасса</a>
 							</li>
-							<li class="b-news-collection-guide-clause">
-								<a href="#" class="b-news-collection-guide-clause-link">Формула</a>
+							<li class="b-news-collection-guide-clause" data-tabulator-tab="true" data-tabulator-tab-descriptor="formula">
+								<a href="#" class="b-news-collection-guide-clause-link" data-tabulator-tab-link="true">Формула</a>
 							</li>
-							<li class="b-news-collection-guide-clause">
-								<a href="#" class="b-news-collection-guide-clause-link">Спорт</a>
+							<li class="b-news-collection-guide-clause" data-tabulator-tab="true" data-tabulator-tab-descriptor="sport">
+								<a href="#" class="b-news-collection-guide-clause-link" data-tabulator-tab-link="true">Спорт</a>
 							</li>
 						</ul>
-						<div class="b-news-collection-section b-news-collection-route-section">
+						<div class="b-news-collection-section b-news-collection-route-section" data-tabulator-tab-contents="true" data-tabulator-tab-contents-descriptor="route" data-rotator="true" data-rotator-descriptor="news-index">
+							<div class="b-news-collection-section-slide" data-rotator-article="true">
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+							</div>
+							<div class="b-news-collection-section-slide g-hidden" data-rotator-article="true">
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="#" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+								<article class="b-news-article">
+									<a href="#" class="b-news-article-link">
+										<div class="b-news-article-picture">
+											<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
+										</div>
+										<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
+										<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
+									</a>
+								</article>
+							</div>
+							<a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-backward-roller" data-rotator-roller="true" data-rotator-roller-descriptor="backward">Назад</a>
+							<a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-forward-roller" data-rotator-roller="true" data-rotator-roller-descriptor="forward">Вперёд</a>
+						</div>
+						<div class="b-news-collection-section b-news-collection-formula-section g-hidden" data-tabulator-tab-contents="true" data-tabulator-tab-contents-descriptor="formula">
 							<article class="b-news-article">
 								<a href="#" class="b-news-article-link">
 									<div class="b-news-article-picture">
@@ -342,7 +404,7 @@
 							<article class="b-news-article">
 								<a href="#" class="b-news-article-link">
 									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
+										<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
 									</div>
 									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
 									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
@@ -363,7 +425,7 @@
 								<li class="b-news-collection-section-guide-clause"></li>
 							</ul>
 						</div>
-						<div class="b-news-collection-section b-news-collection-formula-section g-hidden">
+						<div class="b-news-collection-section b-news-collection-sport-section g-hidden" data-tabulator-tab-contents="true" data-tabulator-tab-contents-descriptor="sport">
 							<article class="b-news-article">
 								<a href="#" class="b-news-article-link">
 									<div class="b-news-article-picture">
@@ -376,7 +438,7 @@
 							<article class="b-news-article">
 								<a href="#" class="b-news-article-link">
 									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
+										<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
 									</div>
 									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
 									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
@@ -385,41 +447,7 @@
 							<article class="b-news-article">
 								<a href="#" class="b-news-article-link">
 									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
-									</div>
-									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
-									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
-								</a>
-							</article>
-							<ul class="b-news-collection-section-guide g-portable">
-								<li class="b-news-collection-section-guide-clause"></li>
-								<li class="b-news-collection-section-guide-clause"></li>
-								<li class="b-news-collection-section-guide-clause"></li>
-							</ul>
-						</div>
-						<div class="b-news-collection-section b-news-collection-sport-section g-hidden">
-							<article class="b-news-article">
-								<a href="#" class="b-news-article-link">
-									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
-									</div>
-									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
-									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
-								</a>
-							</article>
-							<article class="b-news-article">
-								<a href="#" class="b-news-article-link">
-									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
-									</div>
-									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
-									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
-								</a>
-							</article>
-							<article class="b-news-article">
-								<a href="#" class="b-news-article-link">
-									<div class="b-news-article-picture">
-										<img src="#" alt="" class="b-news-article-picture-entity">
+										<img src="./i/test/photo.jpg" alt="" class="b-news-article-picture-entity">
 									</div>
 									<div class="b-news-article-dateline">19 августа<span class="b-news-article-dateline-year">'14</span></div>
 									<h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России</h1>
@@ -431,28 +459,48 @@
 								<li class="b-news-collection-section-guide-clause"></li>
 							</ul>
 						</div>
-						<a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-backward-roller">Назад</a>
-						<a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-forward-roller">Вперёд</a>
 					</section>
 
 					<section class="b-advertising-section">
 
-						<article class="b-advertising-article"></article>
-						<article class="b-advertising-article"></article>
+						<article class="b-advertising-article">
+							<img src="./i/test/banner-01.jpg" alt="">
+						</article>
+						<article class="b-advertising-article">
+							<img src="./i/test/banner-02.jpg" alt="">
+						</article>
 					</section>
 
 					<section class="b-pictures-collection b-rotating-pictures-collection">
 						<h1 class="b-pictures-collection-title">Галерея</h1>
 						<div class="b-pictures-collection-inside" data-waterwheelcarousel="true">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
-							<img src="./i/test/photo.jpg" alt="" class="b-pictures-clause">
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
+							<span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+								<img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+								<h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+							</span>
 						</div>
+						<a href="#" class="b-rotating-pictures-collection-roller b-rotating-pictures-collection-backward-roller" data-waterwheelcarousel-roller="true" data-waterwheelcarousel-roller-direction="backward">Назад</a>
+						<a href="#" class="b-rotating-pictures-collection-roller b-rotating-pictures-collection-forward-roller" data-waterwheelcarousel-roller="true" data-waterwheelcarousel-roller-direction="forward">Вперёд</a>
 					</section>
 
 					<section class="b-partners-collection b-partners-rotating-collection">

@@ -689,6 +689,65 @@ button::-moz-focus-inner {
 		border: 2px solid #fff;
 		border-radius: 26px;
 		margin-right: 24px;
+		position: relative;
+	}
+	.b-sociality-menu .b-sociality-menu-clause:before {
+
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-image: url(../i/graphics.png);
+		background-repeat: no-repeat;
+	}
+	.b-sociality-menu .b-sociality-menu-facebook-clause:before {
+
+		width: 10px;
+		height: 20px;
+		margin-left: -5px;
+		margin-top: -10px;
+		background-position: -146px -25px;
+	}
+	.b-sociality-menu .b-sociality-menu-vkontakte-clause:before {
+
+		width: 22px;
+		height: 11px;
+		margin-left: -11px;
+		margin-top: -6px;
+		background-position: -165px -25px;
+	}
+	.b-sociality-menu .b-sociality-menu-twitter-clause:before {
+
+		width: 17px;
+		height: 15px;
+		margin-left: -9px;
+		margin-top: -8px;
+		background-position: -120px -25px;
+	}
+	.b-sociality-menu .b-sociality-menu-instagram-clause:before {
+
+		width: 20px;
+		height: 20px;
+		margin-left: -10px;
+		margin-top: -10px;
+		background-position: -250px -25px;
+	}
+	.b-sociality-menu .b-sociality-menu-googleplus-clause:before {
+
+		width: 21px;
+		height: 21px;
+		margin-left: -10px;
+		margin-top: -11px;
+		background-position: -195px -25px;
+	}
+	.b-sociality-menu .b-sociality-menu-linkedin-clause:before {
+
+		width: 17px;
+		height: 17px;
+		margin-left: -8px;
+		margin-top: -8px;
+		background-position: -225px -25px;
 	}
 
 .b-phone-section {
@@ -844,6 +903,8 @@ button::-moz-focus-inner {
 		line-height: 20px;
 		float: right;
 		margin-right: 245px;
+		white-space: nowrap;
+		color: #fff;
 	}
 
 	.b-caption .b-caption-description {
@@ -1147,6 +1208,7 @@ button::-moz-focus-inner {
 	margin: 0 58px 50px;
 	border: 2px solid #fff;
 	border-radius: 5px;
+	position: relative;
 }
 
 	.b-pictures-collection .b-pictures-collection-title {
@@ -1160,8 +1222,75 @@ button::-moz-focus-inner {
 
 	.b-pictures-collection .b-pictures-collection-inside {
 
-		height: 395px;
+		height: 397px;
 		margin: 0 140px 15px;
+	}
+
+	.b-pictures-collection .b-pictures-article {
+
+		display: block;
+		width: 596px;
+		height: 397px;
+		position: relative;
+		cursor: pointer;
+	}
+	.b-pictures-collection .b-pictures-current-article {
+
+		cursor: auto;
+	}
+
+		.b-pictures-collection .b-pictures-article .b-pictures-article-entity {
+
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.b-pictures-collection .b-pictures-article .b-pictures-article-title {
+
+			display: none;
+		}
+
+		.b-pictures-collection .b-pictures-current-article .b-pictures-article-title {
+
+			display: block;
+			padding: 20px 30px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-size: 26px;
+			line-height: 34px;
+			background: rgba(0,0,0,.75);
+		}
+
+.b-rotating-pictures-collection {
+
+	position: relative;
+}
+
+	.b-rotating-pictures-collection .b-rotating-pictures-collection-roller {
+
+		position: absolute;
+		top: 215px;
+		width: 54px;
+		height: 54px;
+		text-indent: -9999px;
+		opacity: .7;
+		background-color: transparent;
+		background-image: url(../i/graphics.png);
+	}
+
+	.b-rotating-pictures-collection .b-rotating-pictures-collection-backward-roller {
+
+		left: 41px;
+		background-position: 0 -165px;
+	}
+
+	.b-rotating-pictures-collection .b-rotating-pictures-collection-forward-roller {
+
+		right: 41px;
+		background-position: -70px -165px;
 	}
 
 .b-partners-collection {
