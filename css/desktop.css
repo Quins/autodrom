@@ -614,7 +614,12 @@ button::-moz-focus-inner {
 		font-weight: bold;
 	}
 
-	.b-mailing-form .b-form-fieldset {}
+	.b-mailing-form .b-form-fieldset {
+
+		padding: 0;
+		margin: 0;
+		border: none;
+	}
 
 	.b-mailing-form .b-form-email-fieldset {
 
