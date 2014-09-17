@@ -202,7 +202,7 @@ button::-moz-focus-inner {
 
 		position: absolute;
 		height: 1336px;
-		background-color: #1b1b1b;
+		background-color: transparent;
 	}
 
 	.l-content .l-content-inside {
@@ -1432,10 +1432,14 @@ a.b-white-button:hover {
 		margin-top: -4px;
 		width: 54px;
 		height: 54px;
-		opacity: .5;
+		opacity: .6;
 		text-indent: -9999px;
 		background-color: transparent;
 		background-image: url(../i/graphics.png);
+	}
+	.b-partners-rotating-collection .b-partners-rotating-collection-disabled-roller {
+
+		opacity: .3;
 	}
 
 	.b-partners-rotating-collection .b-partners-rotating-collection-backward-roller {

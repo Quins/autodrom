@@ -32,7 +32,8 @@ $(document).ready(function() {
 		"partners-index": {
 
 			offsetWidth: 190, 
-			visibleFrameClass: "b-partners-visible-article"
+			visibleFrameClass: "b-partners-visible-article", 
+			disabledRollerClass: "b-partners-rotating-collection-disabled-roller"
 		}
 	});
 
@@ -163,6 +164,7 @@ $(document).ready(function() {
 
 			reel.properties = $.extend({
 				visibleFrameClass: "g-visible",
+				disabledRollerClass: "g-disabled", 
 				offsetWidth: reel.framesRepository.find("[data-reel-frame]").first().width()
 			}, options[reel.descriptor]);
 
@@ -195,6 +197,9 @@ $(document).ready(function() {
 					leftOffset(reel.currentFrameOffset - 1);
 				});
 			});
+
+			if (reel.lastFrameOffset < 1)
+				reel.forwardRollers.addClass(reel.properties.disabledRollerClass);
 
 			function leftOffset(offsetFrame) {
 
@@ -230,6 +235,16 @@ $(document).ready(function() {
 				};
 
 				reel.currentFrameOffset = offsetFrame;
+
+				if (reel.currentFrameOffset == 0)
+					reel.backwardRollers.addClass(reel.properties.disabledRollerClass);
+				else
+					reel.backwardRollers.removeClass(reel.properties.disabledRollerClass);
+
+				if (reel.currentFrameOffset == reel.lastFrameOffset)
+					reel.forwardRollers.addClass(reel.properties.disabledRollerClass);
+				else 
+					reel.forwardRollers.removeClass(reel.properties.disabledRollerClass);
 			}
 		});
 	};
