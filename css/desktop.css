@@ -191,6 +191,7 @@ button::-moz-focus-inner {
 .p-main .l-content {
 
 	background: #1b1b1b url(../i/bg.jpg) repeat;
+	color: #fff;
 }
 
 	.l-content .l-content-background {
@@ -1771,6 +1772,16 @@ a.b-white-button:hover {
 				background: #f7f7f7;
 				font-size: 16px;
 				line-height: 26px;
+				border-radius: 0 0 5px 5px;
+			}
+
+			.tumbler__thumb .button {
+				
+				margin: -25px 0 -27px;
+				background: #f7f7f7;
+				font-size: 14px;
+				line-height: 26px;
+				padding: 13px;
 				border-radius: 0 0 5px 5px;
 			}
 
