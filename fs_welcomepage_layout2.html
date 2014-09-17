@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?><!--SPG:
+
+Этот HTML-файл связан с макетом страницы SharePoint (ASPX-файлом) с таким же именем. При наличии связи между файлами редактирование ASPX-файла не разрешено, а операции переименования, перемещения и удаления затрагивают оба файла.
+
+Чтобы создать макет страницы непосредственно из этого HTML-файла, просто заполните содержимое заполнителей контента. Используйте генератор фрагментов кода на http://sochiautodrom.ru/_layouts/15/ComponentHome.aspx?Url=http%3A%2F%2Fsochiautodrom%2Eru%2F%5Fcatalogs%2Fmasterpage%2Ffs%5Fwelcomepage%5Flayout2%2Easpx для создания и настройки дополнительных заполнителей контента и других полезных объектов SharePoint, а затем скопируйте и вставьте их в виде фрагментов кода в ваш HTML-код. Все обновления этого файла в заполнителях контента будут автоматически синхронизироваться со связанным макетом страницы.
+
+-->
+<!DOCTYPE html[]>
+<html lang="ru-RU" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <!--MS:<asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server">-->
+            <!--MS:<SharePoint:ProjectProperty Property="Title" runat="server">-->
+            <!--ME:</SharePoint:ProjectProperty>-->
+            <!--CS: Начало фрагмента кода Поле страницы: Название-->
+            <!--SPM:<%@Register Tagprefix="PageFieldFieldValue" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>-->
+            <!--MS:<PageFieldFieldValue:FieldValue FieldName="fa564e0f-0c70-4ab9-b863-0177e6ddd247" runat="server">-->
+            <!--ME:</PageFieldFieldValue:FieldValue>-->
+            <!--CE: Конец фрагмента кода Поле страницы: Название-->
+        <!--ME:</asp:ContentPlaceHolder>-->
+        <!--MS:<asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server">-->
+            <!--CS: Начало фрагмента кода Панель режима правки-->
+            <!--SPM:<%@Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>-->
+            <!--SPM:<%@Register Tagprefix="Publishing" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>-->
+            <!--MS:<Publishing:EditModePanel runat="server" id="editmodestyles">-->
+                <!--MS:<SharePoint:CssRegistration name="&#60;% $SPUrl:~sitecollection/Style Library/~language/Themable/Core Styles/editmode15.css %&#62;" After="&#60;% $SPUrl:~sitecollection/Style Library/~language/Themable/Core Styles/pagelayouts15.css %&#62;" runat="server">-->
+                <!--ME:</SharePoint:CssRegistration>-->
+            <!--ME:</Publishing:EditModePanel>-->
+            <!--CE: Конец фрагмента кода Панель режима правки-->
+        <!--ME:</asp:ContentPlaceHolder>-->
+        <!--MS:<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server">-->
+        <!--ME:</asp:ContentPlaceHolder>-->
+        <link rel="stylesheet" type="text/css" href="css/desktop.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="css/gadget.css" media="all" />
+        <script type="text/javascript" src="js/jquery.js">//<![CDATA[
+        
+        //]]>
+        </script>
+        <script type="text/javascript" src="js/jquery.waterwheelCarousel.min.js">//<![CDATA[
+        
+        //]]>
+        </script>
+        <script type="text/javascript" src="js/common.js">//<![CDATA[
+        
+        //]]>
+        </script>
+        <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:ContentPlaceHolderHashPlaceHolderPageTitleInTitleArea msdt:dt="string">1</mso:ContentPlaceHolderHashPlaceHolderPageTitleInTitleArea>
+<mso:ContentPlaceHolderHashPlaceHolderMain msdt:dt="string">1</mso:ContentPlaceHolderHashPlaceHolderMain>
+<mso:HtmlDesignStatusAndPreview msdt:dt="string">http://sochiautodrom.ru/_catalogs/masterpage/fs_welcomepage_layout2.html, Преобразование выполнено успешно.</mso:HtmlDesignStatusAndPreview>
+<mso:ContentTypeId msdt:dt="string">0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE8110003D357F861E29844953D5CAA1D4D8A3B</mso:ContentTypeId>
+<mso:ContentPlaceHolderHashPlaceHolderAdditionalPageHead msdt:dt="string">1</mso:ContentPlaceHolderHashPlaceHolderAdditionalPageHead>
+<mso:ContentPlaceHolderHashPlaceHolderPageTitle msdt:dt="string">1</mso:ContentPlaceHolderHashPlaceHolderPageTitle>
+<mso:MasterHash msdt:dt="string">-996685129</mso:MasterHash>
+<mso:HtmlDesignFromMaster msdt:dt="string">http://sochiautodrom.ru/_catalogs/masterpage/FS.Portal.New.html, http://sochiautodrom.ru/_catalogs/masterpage/FS.Portal.New.html</mso:HtmlDesignFromMaster>
+<mso:PublishingAssociatedContentType msdt:dt="string">;#Страница статьи;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D;#</mso:PublishingAssociatedContentType>
+<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+<mso:ContentPlaceHolderChangedPlaceHolderPageTitle msdt:dt="string">True</mso:ContentPlaceHolderChangedPlaceHolderPageTitle>
+<mso:ContentPlaceHolderChangedPlaceHolderAdditionalPageHead msdt:dt="string">True</mso:ContentPlaceHolderChangedPlaceHolderAdditionalPageHead>
+<mso:ContentPlaceHolderChangedPlaceHolderMain msdt:dt="string">True</mso:ContentPlaceHolderChangedPlaceHolderMain>
+
+<mso:ContentPlaceHolderChangedPlaceHolderPageTitleInTitleArea msdt:dt="string">True</mso:ContentPlaceHolderChangedPlaceHolderPageTitleInTitleArea>
+
+<mso:HtmlDesignPreviewUrl msdt:dt="string">http://sochiautodrom.ru/Pages/default2.aspx, /Pages/default2.aspx</mso:HtmlDesignPreviewUrl>
+<mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+<mso:ContentPlaceHolderHashPlaceHolderBodyAreaClass msdt:dt="string">268219038</mso:ContentPlaceHolderHashPlaceHolderBodyAreaClass>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+    </head>
+    <body class="p-main">
+        <!--MS:<asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server">-->
+            <section class="b-caption">
+                <h1 class="b-caption-title">Официальный сайт промоутера гонок Formula 1
+                                    
+                
+                </h1>
+                <div class="b-caption-description">2014 Formula 1 Гран-при России
+                                    
+                
+                </div>
+                <ul class="b-caption-sociality-menu">
+                    <li class="b-caption-sociality-menu-clause b-caption-sociality-menu-facebook-clause">
+                        <a href="#" class="b-caption-sociality-menu-clause-link">Facebook
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-caption-sociality-menu-clause b-caption-sociality-menu-vkontakte-clause">
+                        <a href="#" class="b-caption-sociality-menu-clause-link">ВКонтакте
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-caption-sociality-menu-clause b-caption-sociality-menu-twitter-clause">
+                        <a href="#" class="b-caption-sociality-menu-clause-link">Twitter
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-caption-sociality-menu-clause b-caption-sociality-menu-instagram-clause">
+                        <a href="#" class="b-caption-sociality-menu-clause-link">Instagram
+                                            
+                        
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="b-promos-collection b-rotating-promos-collection g-cleared">
+                <div class="b-promos-collection-counter" data-counter="true">
+                    <h1 class="b-promos-collection-counter-title">До первого в истории Гран-при Формулы 1 в России осталось
+                                        
+                    
+                    </h1>
+                    <div class="b-promos-collection-counter-inside">
+                        <dl class="b-promos-collection-counter-clause b-promos-collection-counter-days-clause">
+                            <dd class="b-promos-collection-counter-clause-contents" data-counter-days="true" data-counter-days-letterspan="b-promos-collection-counter-clause-contents-letter">
+                                <span class="b-promos-collection-counter-clause-contents-letter">1
+                                                    
+                                
+                                </span>
+                                <span class="b-promos-collection-counter-clause-contents-letter">2
+                                                    
+                                
+                                </span>
+                                <span class="b-promos-collection-counter-clause-contents-letter">2
+                                                    
+                                
+                                </span>
+                            </dd>
+                            <dt class="b-promos-collection-counter-clause-title">дней
+                                                
+                            
+                            </dt>
+                        </dl>
+                        <dl class="b-promos-collection-counter-clause b-promos-collection-counter-hours-clause">
+                            <dd class="b-promos-collection-counter-clause-contents" data-counter-hours="true" data-counter-hours-letterspan="b-promos-collection-counter-clause-contents-letter">
+                                <span class="b-promos-collection-counter-clause-contents-letter">1
+                                                    
+                                
+                                </span>
+                                <span class="b-promos-collection-counter-clause-contents-letter">8
+                                                    
+                                
+                                </span>
+                            </dd>
+                            <dt class="b-promos-collection-counter-clause-title">часов
+                                                
+                            
+                            </dt>
+                        </dl>
+                        <dl class="b-promos-collection-counter-clause b-promos-collection-counter-minutes-clause">
+                            <dd class="b-promos-collection-counter-clause-contents" data-counter-minutes="true" data-counter-minutes-letterspan="b-promos-collection-counter-clause-contents-letter">
+                                <span class="b-promos-collection-counter-clause-contents-letter">1
+                                                    
+                                
+                                </span>
+                                <span class="b-promos-collection-counter-clause-contents-letter">8
+                                                    
+                                
+                                </span>
+                            </dd>
+                            <dt class="b-promos-collection-counter-clause-title">минут
+                                                
+                            
+                            </dt>
+                        </dl>
+                        <dl class="b-promos-collection-counter-clause b-promos-collection-counter-seconds-clause">
+                            <dd class="b-promos-collection-counter-clause-contents" data-counter-seconds="true" data-counter-seconds-letterspan="b-promos-collection-counter-clause-contents-letter">
+                                <span class="b-promos-collection-counter-clause-contents-letter">1
+                                                    
+                                
+                                </span>
+                                <span class="b-promos-collection-counter-clause-contents-letter">8
+                                                    
+                                
+                                </span>
+                            </dd>
+                            <dt class="b-promos-collection-counter-clause-title">секунд
+                                                
+                            
+                            </dt>
+                        </dl>
+                    </div>
+                    <a href="#" class="b-button b-white-button">Заказать билет
+                                        
+                    
+                    </a>
+                </div>
+                <article class="b-promos-article">
+                    <img src="i/track.png" alt="" class="b-promos-article-picture-entity" />
+                </article>
+                <article class="b-promos-article g-hidden">
+                </article>
+                <article class="b-promos-article g-hidden">
+                </article>
+                <ul class="b-promos-collection-guide">
+                    <li class="b-promos-collection-guide-clause b-promos-collection-guide-current-clause">
+                        <a href="#" class="b-promos-collection-guide-clause-link">
+                        </a>
+                    </li>
+                    <li class="b-promos-collection-guide-clause">
+                        <a href="#" class="b-promos-collection-guide-clause-link">
+                        </a>
+                    </li>
+                    <li class="b-promos-collection-guide-clause">
+                        <a href="#" class="b-promos-collection-guide-clause-link">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="b-page-sociality">
+            </section>
+            <section class="b-news-collection b-news-rotating-collection">
+                <h1 class="b-news-collection-title">Новости
+                                    
+                
+                </h1>
+                <ul class="b-news-collection-guide">
+                    <li class="b-news-collection-guide-clause b-news-collection-guide-current-clause">
+                        <a href="#" class="b-news-collection-guide-clause-link">Трасса
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-news-collection-guide-clause">
+                        <a href="#" class="b-news-collection-guide-clause-link">Формула
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-news-collection-guide-clause">
+                        <a href="#" class="b-news-collection-guide-clause-link">Спорт
+                                            
+                        
+                        </a>
+                    </li>
+                </ul>
+                <div class="b-news-collection-section b-news-collection-route-section">
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <ul class="b-news-collection-section-guide g-portable">
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                    </ul>
+                </div>
+                <div class="b-news-collection-section b-news-collection-formula-section g-hidden">
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <ul class="b-news-collection-section-guide g-portable">
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                    </ul>
+                </div>
+                <div class="b-news-collection-section b-news-collection-sport-section g-hidden">
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <article class="b-news-article">
+                        <a href="#" class="b-news-article-link">
+                            <div class="b-news-article-picture">
+                                <img src="#" alt="" class="b-news-article-picture-entity" />
+                            </div>
+                            <div class="b-news-article-dateline">19 августа
+                                                    
+                                
+                                <span class="b-news-article-dateline-year">'14
+                                                    
+                                
+                                </span>
+                            </div>
+                            <h1 class="b-news-article-title">Трасса Сочи Автодрома признана лучшей автодорогой в России
+                                                
+                            
+                            </h1>
+                        </a>
+                    </article>
+                    <ul class="b-news-collection-section-guide g-portable">
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                        <li class="b-news-collection-section-guide-clause">
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-backward-roller">Назад
+                                    
+                
+                </a>
+                <a href="#" class="b-news-rotating-collection-roller b-news-rotating-collection-forward-roller">Вперёд
+                                    
+                
+                </a>
+            </section>
+            <section class="b-advertising-section">
+                <article class="b-advertising-article">
+                </article>
+                <article class="b-advertising-article">
+                </article>
+            </section>
+            <section class="b-pictures-collection b-rotating-pictures-collection">
+                <h1 class="b-pictures-collection-title">Галерея
+                                    
+                
+                </h1>
+                <div class="b-pictures-collection-inside" data-waterwheelcarousel="true">
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                    <span class="b-pictures-article" data-waterwheelcarousel-slide="true">
+                        <img src="./i/test/photo.jpg" alt="" class="b-pictures-article-entity">
+                        <h1 class="b-pictures-article-title">Экспозиция на Форуме &laquo;Сочи-2014&raquo;</h1>
+                    </span>
+                </div>
+                <a href="#" class="b-rotating-pictures-collection-roller b-rotating-pictures-collection-backward-roller" data-waterwheelcarousel-roller="true" data-waterwheelcarousel-roller-direction="backward">Назад</a>
+                <a href="#" class="b-rotating-pictures-collection-roller b-rotating-pictures-collection-forward-roller" data-waterwheelcarousel-roller="true" data-waterwheelcarousel-roller-direction="forward">Вперёд</a>
+            </section>
+            <section class="b-partners-collection b-partners-rotating-collection">
+                <h1 class="b-partners-collection-title">Партнеры
+                                    
+                
+                </h1>
+                <div class="b-partners-collection-inside">
+                    <article class="b-partners-article">
+                        <a href="#" class="b-partners-article-link">
+                            <span class="b-partners-article-picture">
+                                <img src="i/test/partner-mainpage.png" alt="" class="b-partners-article-picture-entity" />
+                            </span>
+                        </a>
+                    </article>
+                    <article class="b-partners-article">
+                        <a href="#" class="b-partners-article-link">
+                            <span class="b-partners-article-picture">
+                                <img src="i/test/partner-mainpage.png" alt="" class="b-partners-article-picture-entity" />
+                            </span>
+                        </a>
+                    </article>
+                    <article class="b-partners-article">
+                        <a href="#" class="b-partners-article-link">
+                            <span class="b-partners-article-picture">
+                                <img src="i/test/partner-mainpage.png" alt="" class="b-partners-article-picture-entity" />
+                            </span>
+                        </a>
+                    </article>
+                    <article class="b-partners-article">
+                        <a href="#" class="b-partners-article-link">
+                            <span class="b-partners-article-picture">
+                                <img src="i/test/partner-mainpage.png" alt="" class="b-partners-article-picture-entity" />
+                            </span>
+                        </a>
+                    </article>
+                </div>
+                <a href="#" class="b-partners-rotating-collection-roller b-partners-rotating-collection-backward-roller">Назад
+                                    
+                
+                </a>
+                <a href="#" class="b-partners-rotating-collection-roller b-partners-rotating-collection-forward-roller">Вперёд
+                                    
+                
+                </a>
+            </section>
+            <section class="b-posts-collection">
+                <h1 class="b-posts-collection-title">Ленты социальных сетей
+                                    
+                
+                </h1>
+                <ul class="b-posts-collection-guide">
+                    <li class="b-posts-collection-guide-clause b-posts-collection-guide-all-clause b-posts-collection-guide-current-clause">
+                        <a href="#" class="b-posts-collection-guide-clause-link">Все
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-posts-collection-guide-clause b-posts-collection-guide-facebook-clause">
+                        <a href="#" class="b-posts-collection-guide-clause-link">Facebook
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-posts-collection-guide-clause b-posts-collection-guide-vkontakte-clause">
+                        <a href="#" class="b-posts-collection-guide-clause-link">ВКонтакте
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-posts-collection-guide-clause b-posts-collection-guide-twitter-clause">
+                        <a href="#" class="b-posts-collection-guide-clause-link">Twitter
+                                            
+                        
+                        </a>
+                    </li>
+                    <li class="b-posts-collection-guide-clause b-posts-collection-guide-instagram-clause">
+                        <a href="#" class="b-posts-collection-guide-clause-link">Instagram
+                                            
+                        
+                        </a>
+                    </li>
+                </ul>
+                <div class="b-posts-collection-column b-posts-collection-first-column">
+                    <article class="b-posts-article b-posts-twitter-article">
+                        <div class="b-posts-article-contents">траляля
+                                            
+                        
+                        </div>
+                        <ul class="b-posts-article-actions-collection">
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-answer-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-retweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-favourite-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-tweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-gplus-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-linkedin-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="b-posts-article-meta">
+                            <a href="" class="b-posts-article-meta-link b-posts-article-meta-permanent-link">Tweeted
+                                                
+                            
+                            </a>
+                            <span class="b-posts-article-meta-time">20 ч. + 55 м. назад
+                                                
+                            
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-posts-collection-column b-posts-collection-second-column">
+                    <article class="b-posts-article b-posts-twitter-article">
+                        <div class="b-posts-article-contents">траляля
+                                            
+                        
+                        </div>
+                        <ul class="b-posts-article-actions-collection">
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-answer-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-retweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-favourite-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-tweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-gplus-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-linkedin-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="b-posts-article-meta">
+                            <a href="" class="b-posts-article-meta-link b-posts-article-meta-permanent-link">Tweeted
+                                                
+                            
+                            </a>
+                            <span class="b-posts-article-meta-time">20 ч. + 55 м. назад
+                                                
+                            
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-posts-collection-column b-posts-collection-third-column">
+                    <article class="b-posts-article b-posts-twitter-article">
+                        <div class="b-posts-article-contents">траляля
+                                            
+                        
+                        </div>
+                        <ul class="b-posts-article-actions-collection">
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-answer-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-retweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-favourite-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-tweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-gplus-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-linkedin-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="b-posts-article-meta">
+                            <a href="" class="b-posts-article-meta-link b-posts-article-meta-permanent-link">Tweeted
+                                                
+                            
+                            </a>
+                            <span class="b-posts-article-meta-time">20 ч. + 55 м. назад
+                                                
+                            
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-posts-collection-column b-posts-collection-fourth-column">
+                    <article class="b-posts-article b-posts-facebook-article">
+                        <div class="b-posts-article-contents">траляля
+                                            
+                        
+                        </div>
+                        <ul class="b-posts-article-actions-collection">
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-answer-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-retweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-favourite-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-tweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-gplus-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-linkedin-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="b-posts-article-meta">
+                            <a href="" class="b-posts-article-meta-link b-posts-article-meta-permanent-link">Posted
+                                                
+                            
+                            </a>
+                            <span class="b-posts-article-meta-time">20 ч. + 55 м. назад
+                                                
+                            
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-posts-collection-column b-posts-collection-fifth-column">
+                    <article class="b-posts-article b-posts-twitter-article">
+                        <div class="b-posts-article-contents">траляля
+                                            
+                        
+                        </div>
+                        <ul class="b-posts-article-actions-collection">
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-answer-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-retweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-favourite-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-tweet-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-gplus-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                            <li class="b-posts-article-actions-collection-clause b-posts-article-actions-collection-linkedin-clause">
+                                <a href="#" class="b-posts-article-actions-collection-clause-link">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="b-posts-article-meta">
+                            <a href="" class="b-posts-article-meta-link b-posts-article-meta-permanent-link">Tweeted
+                                                
+                            
+                            </a>
+                            <span class="b-posts-article-meta-time">20 ч. + 55 м. назад
+                                                
+                            
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        <!--ME:</asp:ContentPlaceHolder>-->
+    </body>
+</html>

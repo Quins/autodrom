@@ -662,6 +662,7 @@ button::-moz-focus-inner {
 
 	.b-sociality-section .b-sociality-section-title {
 
+		font-family: "EuropeDemi", sans-serif;
 		font-size: 14px;
 		line-height: 30px;
 		padding-bottom: 5px;
@@ -765,6 +766,7 @@ button::-moz-focus-inner {
 
 	.b-phone-section .b-phone-section-title {
 
+		font-family: "EuropeDemi", sans-serif;
 		font-size: 14px;
 		line-height: 30px;
 		padding-bottom: 5px;
