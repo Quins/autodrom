@@ -355,6 +355,9 @@ button::-moz-focus-inner {
 
 			display: block;
 			position: absolute;
+			-moz-box-sizing: content-box;
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box;
 			z-index: 100;
 			top: 88px;
 			left: 50%;
