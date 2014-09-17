@@ -188,7 +188,7 @@ button::-moz-focus-inner {
 	position: relative;
 }
 
-.p-main .l-content {
+.l-mainpage-content {
 
 	background: #1b1b1b url(../i/bg.jpg) repeat;
 	color: #fff;
@@ -202,11 +202,6 @@ button::-moz-focus-inner {
 		right: 0;
 		background-position: 50% 0;
 		background-repeat: no-repeat;
-	}
-
-	.p-main .l-content .l-content-background {
-
-		position: absolute;
 		height: 1336px;
 		background-color: transparent;
 	}
