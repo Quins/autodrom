@@ -1253,12 +1253,21 @@ a.b-white-button:hover {
 
 		display: inline-block;
 		width: 565px;
-		height: 300px;
 		margin: 0 17px 10px 16px;
 		border-radius: 5px;
 		overflow: hidden;
 		background: rgba(0,0,0,.4);
 	}
+
+		.b-advertising-section .b-advertising-article a {
+
+			display: block;
+		}
+
+		.b-advertising-section .b-advertising-article img {
+
+			width: 100%;
+		}
 
 .b-pictures-collection {
 
