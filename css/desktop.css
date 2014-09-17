@@ -323,17 +323,17 @@ button::-moz-focus-inner {
 		}
 		.b-primary-menu .b-primary-menu-clause .b-primary-menu-clause-link:hover {
 
-			padding: 0 21px 32px;
+/*			padding: 0 21px 32px;
 			margin: 0 -21px -32px;
-			position: relative;
+*/			position: relative;
 		}
 
 		.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu {
 
 			display: none;
 		}
-		.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu:hover, 
-		.b-primary-menu .b-primary-menu-clause .b-primary-menu-clause-link:hover + .b-primary-sub-menu {
+
+		.b-primary-menu .b-primary-menu-clause .b-primary-opened-sub-menu {
 
 			display: block;
 			position: absolute;
@@ -372,13 +372,30 @@ button::-moz-focus-inner {
 				margin: 0;
 				top: 20px;
 				right: 290px;
+				overflow: hidden;
+				border-radius: 5px;
 			} 
+
+				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause .b-primary-sub-menu-clause-link {
+
+					display: block;
+					position: relative;
+				} 
+				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause .b-primary-sub-menu-clause-link:before {
+
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background: rgba(8, 38, 57, 0.5);
+				} 
 
 				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause .b-primary-sub-menu-picture-clause-entity {
 
-					width: 482px;
-					height: 290px;
-					border-radius: 5px;
+					width: 100%;
 				} 
 
 		.b-primary-menu .b-primary-menu-tickets-clause .b-primary-menu-clause-link {
@@ -637,6 +654,10 @@ button::-moz-focus-inner {
 			color: #fff;
 			border: none;
 			background: none;
+		}
+		.b-mailing-form .b-form-submit-fieldset .b-form-fieldset-input:hover {
+
+			cursor: pointer;
 		}
 
 			.b-mailing-form .b-form-submit-fieldset .b-form-fieldset-input:before {

@@ -36,6 +36,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$("[data-toggle]").toggles({
+		"track-submenu": {}, 
+		"news-submenu": {}, 
+		"events-submenu": {}, 
+		"hotels-submenu": {}, 
+		"press-submenu": {}
+	});
+
     if($("[data-tabulator]").length)
         initializeTabulators();
 
@@ -213,6 +221,80 @@ $(document).ready(function() {
 
 				reel.currentFrameOffset = offsetFrame;
 			}
+		});
+	};
+})(jQuery);
+
+/* Toggles */
+
+(function( $ ) {
+	$.fn.toggles = function(options) {
+
+		return this.each( function() {
+
+			var toggle = {
+				descriptor: ($(this).data("toggle-descriptor") ? $(this).data("toggle-descriptor") : ""), 
+				entity: $(this), 
+				on: false, 
+				targets: []
+			};
+
+			toggle.properties = $.extend({
+			}, options[toggle.descriptor]);
+
+			$("[data-toggle-target][data-toggle-target-descriptor='" + toggle.descriptor + "']").each( function(i) {
+
+				toggle.targets[i] = {
+
+					entity: $(this),
+					toggleClass: $(this).data('toggle-target-class')
+				}
+			});
+
+			toggle.entity.click( function(event) {
+
+				event.preventDefault();
+				$(document).unbind('mouseup');
+
+				$.each(toggle.targets, function(i, e) {
+
+					e.entity.toggleClass(e.toggleClass);
+				});
+
+				if (toggle.on) {
+
+					toggle.on = false;
+				} else {
+
+					toggle.on = true;
+
+					$(document).mouseup(function (event) {
+
+						var outside = 0;
+
+						$.each(toggle.targets, function(i,e) {
+
+							var container = e.entity;
+
+							if (!container.is(event.target) && container.has(event.target).length === 0) {
+
+								outside += 1;
+							}
+						});
+
+						if (outside == toggle.targets.length && !toggle.entity.is(event.target) && toggle.entity.has(event.target).length === 0) {
+
+							$.each(toggle.targets, function(i, e) {
+
+								e.entity.toggleClass(e.toggleClass);
+							});
+							toggle.on = false;
+							$(document).unbind('mouseup');
+						}
+					});
+				}
+			});
+
 		});
 	};
 })(jQuery);
