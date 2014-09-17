@@ -37,11 +37,21 @@ $(document).ready(function() {
 	});
 
 	$("[data-toggle]").toggles({
-		"track-submenu": {}, 
-		"news-submenu": {}, 
-		"events-submenu": {}, 
-		"hotels-submenu": {}, 
-		"press-submenu": {}
+		"track-submenu": {
+			toggleOnOutsideClick: true
+		}, 
+		"news-submenu": {
+			toggleOnOutsideClick: true
+		}, 
+		"events-submenu": {
+			toggleOnOutsideClick: true
+		}, 
+		"hotels-submenu": {
+			toggleOnOutsideClick: true
+		}, 
+		"press-submenu": {
+			toggleOnOutsideClick: true
+		}
 	});
 
     if($("[data-tabulator]").length)
@@ -240,6 +250,7 @@ $(document).ready(function() {
 			};
 
 			toggle.properties = $.extend({
+				toggleOnOutsideClick: false
 			}, options[toggle.descriptor]);
 
 			$("[data-toggle-target][data-toggle-target-descriptor='" + toggle.descriptor + "']").each( function(i) {
@@ -268,30 +279,33 @@ $(document).ready(function() {
 
 					toggle.on = true;
 
-					$(document).mouseup(function (event) {
+					if (toggle.properties.toggleOnOutsideClick) {
 
-						var outside = 0;
+						$(document).mouseup(function (event) {
 
-						$.each(toggle.targets, function(i,e) {
+							var outside = 0;
 
-							var container = e.entity;
+							$.each(toggle.targets, function(i,e) {
 
-							if (!container.is(event.target) && container.has(event.target).length === 0) {
+								var container = e.entity;
 
-								outside += 1;
+								if (!container.is(event.target) && container.has(event.target).length === 0) {
+
+									outside += 1;
+								}
+							});
+
+							if (outside == toggle.targets.length && !toggle.entity.is(event.target) && toggle.entity.has(event.target).length === 0) {
+
+								$.each(toggle.targets, function(i, e) {
+
+									e.entity.toggleClass(e.toggleClass);
+								});
+								toggle.on = false;
+								$(document).unbind('mouseup');
 							}
 						});
-
-						if (outside == toggle.targets.length && !toggle.entity.is(event.target) && toggle.entity.has(event.target).length === 0) {
-
-							$.each(toggle.targets, function(i, e) {
-
-								e.entity.toggleClass(e.toggleClass);
-							});
-							toggle.on = false;
-							$(document).unbind('mouseup');
-						}
-					});
+					}
 				}
 			});
 

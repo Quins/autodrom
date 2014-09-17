@@ -146,10 +146,12 @@ button::-moz-focus-inner {
 
 	height: 88px;
 	background: #d60a05;
-	position: relative;
+	position: fixed;
+	z-index: 100;
 	color: #fff;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
 	box-shadow: 0 0 10px rgba(0,0,0,.5);
+	width: 100%;
 }
 
 	.l-header:before {
@@ -180,6 +182,7 @@ button::-moz-focus-inner {
 
 .l-content {
 
+	margin-top: 88px;
 	background: #1b1b1b url(../i/bg.jpg) repeat;
 	color: #fff;
 	position: relative;
@@ -616,6 +619,7 @@ button::-moz-focus-inner {
 
 			display: block;
 			width: 100%;
+			font-family: "EuropeDemi", sans-serif;
 			box-sizing: border-box;
 			border-radius: 5px;
 			border: 2px solid #fff;
@@ -660,6 +664,7 @@ button::-moz-focus-inner {
 			margin: -2px 0 -3px;
 			padding: 2px 0 0;
 			font-size: 14px;
+			font-family: "EuropeDemi", sans-serif;
 			font-weight: bold;
 			text-transform: uppercase;
 			white-space: nowrap;
