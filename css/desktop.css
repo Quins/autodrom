@@ -118,6 +118,9 @@ button::-moz-focus-inner {
 	font-size: 0;
 	line-height: 0;
 	min-width: 1300px; /* REMOVE THIS */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 	.l-outer .l-outer-section {
@@ -217,6 +220,9 @@ button::-moz-focus-inner {
 		margin: 0 auto;
 		max-width: 1276px;
 		padding: 40px 30px 60px 60px;
+		-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
 	}
 
 /* Basic (basic blocks, which are the basis) / prefix — b- */
@@ -232,6 +238,9 @@ button::-moz-focus-inner {
 	text-indent: -9999px;
 	background: #fff;
 	position: relative;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 .b-auxiliary-logo {
@@ -567,6 +576,9 @@ button::-moz-focus-inner {
 
 	.b-general-contacts .b-general-contacts-title {
 
+		color: #fff;
+		font-family: "Europe", sans-serif;
+		font-weight: normal;
 		font-size: 30px;
 		line-height: 40px;
 		padding: 0 0 20px;
@@ -654,6 +666,9 @@ button::-moz-focus-inner {
 			color: #fff;
 			border: none;
 			background: none;
+			-moz-box-sizing: content-box;
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box;
 		}
 		.b-mailing-form .b-form-submit-fieldset .b-form-fieldset-input:hover {
 
@@ -702,8 +717,8 @@ button::-moz-focus-inner {
 	.b-sociality-menu .b-sociality-menu-clause {
 
 		display: inline-block;
-		width: 48px;
-		height: 48px;
+		width: 52px;
+		height: 52px;
 		border: 2px solid #fff;
 		border-radius: 26px;
 		margin-right: 24px;
@@ -1035,6 +1050,9 @@ button::-moz-focus-inner {
 				padding: 1px;
 				margin: -1px;
 				position: relative;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+				box-sizing: content-box;
 			}
 
 .b-promos-collection {
@@ -1361,6 +1379,9 @@ a.b-white-button:hover {
 		padding: 15px 25px;
 		width: 190px;
 		height: 110px;
+		-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
 	}
 
 		.b-partners-collection .b-partners-article .b-partners-article-link {
