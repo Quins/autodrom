@@ -183,9 +183,14 @@ button::-moz-focus-inner {
 .l-content {
 
 	margin-top: 88px;
-	background: #1b1b1b url(../i/bg.jpg) repeat;
-	color: #fff;
+	background: #fff;
+	color: #000;
 	position: relative;
+}
+
+.p-main .l-content {
+
+	background: #1b1b1b url(../i/bg.jpg) repeat;
 }
 
 	.l-content .l-content-background {
@@ -1685,6 +1690,87 @@ a.b-white-button:hover {
 					margin-right: 5px;
 				}
 
+/* Trash */ 
 
+.page__content {
 
+	margin: 0 325px 0 290px;
+}
+
+.hotel {
+
+	margin: 60px 0 0;
+}
+
+	.hotel h2 {
+
+		font-family: "EuropeDemi", sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 50px;
+		text-transform: uppercase;
+	}
+
+	.tumbler {
+
+		float: none;
+		display: block;
+		width: auto;
+		margin: 0;
+	}
+
+		.tumbler__main {
+
+			margin: 0;
+			border-radius: 5px 5px 0 0;
+			overflow: hidden;
+		}
+
+		.tumbler__thumbs {
+
+			line-height: 45px;
+			margin: 0;
+			text-align: center;
+			background: #f7f7f7;
+		}
+
+			.tumbler__thumb {
+
+				display: inline-block;
+				vertical-align: middle;
+				float: none;
+				box-sizing: border-box;
+				width: 11px;
+				height: 11px;
+				border: 1px solid #000;
+				background: transparent;
+				margin: 0 4px;
+			}
+
+			.tumbler__thumb a {
+				
+				display: block;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+				box-sizing: content-box;
+				width: 100%;
+				height: 100%;
+				padding: 1px;
+				margin: -1px;
+			}
+
+			.tumbler__thumb img {
+				
+				display: none;
+			}
+
+			.tumbler__thumb p {
+				
+				padding: 0 30px 40px;
+				margin: 0;
+				background: #f7f7f7;
+				font-size: 16px;
+				line-height: 26px;
+				border-radius: 0 0 5px 5px;
+			}
 
