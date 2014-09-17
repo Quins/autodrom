@@ -1158,7 +1158,10 @@ button::-moz-focus-inner {
 		float: right;
 	}
 
-.b-button {
+.b-button, 
+a.b-button, 
+a.b-button:visited, 
+a.b-button:hover {
 
 	display: inline-block;
 	margin: 0;
@@ -1173,7 +1176,10 @@ button::-moz-focus-inner {
 	text-decoration: none;
 	border-radius: 10px;
 }
-.b-white-button {
+.b-white-button, 
+a.b-white-button, 
+a.b-white-button:visited, 
+a.b-white-button:hover {
 
 	border: 2px solid #fff;
 	background: #fff;

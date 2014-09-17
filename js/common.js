@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("[data-counter]").counter("19/09/2014 10:30");
+	$("[data-counter]").counter("12/10/2014 11:00 GMT");
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
@@ -63,7 +63,7 @@ $(document).ready(function() {
 		var tmpcalendar = tmp[0].split("/");
 
 		targettime.day = parseInt(tmpcalendar[0]);
-		targettime.month = parseInt(tmpcalendar[1]);
+		targettime.month = parseInt(tmpcalendar[1]) - 1;
 		targettime.year = parseInt(tmpcalendar[2]);
 
 		targettime.hour = parseInt(tmpclock[0]);
@@ -99,7 +99,7 @@ $(document).ready(function() {
 				var difference = target.getTime() - now.getTime();
 				difference = new Date(difference);
 
-				var tmparray = ('00' + difference.getDay()).slice(-3).toString().split("");
+				var tmparray = ( '00' + parseInt(difference.getTime() / 86400000) ).slice(-3).toString().split("");
 				days.entity.empty();
 				$.each(tmparray, function(i, e) {
 
