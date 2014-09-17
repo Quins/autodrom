@@ -1800,6 +1800,7 @@ a.b-white-button:hover {
 
 	padding: 60px 0 0;
 	margin: 0;
+	text-align: center;
 }
 
 	.l-content .hotel h2 {
@@ -1810,6 +1811,7 @@ a.b-white-button:hover {
 		line-height: 50px;
 		text-transform: uppercase;
 		margin: 0;
+		text-align: left;
 	}
 
 	.l-content .tumbler {
@@ -1851,6 +1853,7 @@ a.b-white-button:hover {
 				width: 11px;
 				height: 11px;
 				border: 1px solid #000;
+				border-radius: 5px;
 				background: transparent;
 				margin: 0 4px;
 			}
@@ -1872,23 +1875,21 @@ a.b-white-button:hover {
 				display: none;
 			}
 
-			.l-content .tumbler__thumb p {
-				
-				padding: 0 30px 40px;
-				margin: 0;
-				background: #f7f7f7;
-				font-size: 16px;
-				line-height: 26px;
-				border-radius: 0 0 5px 5px;
-			}
+	.l-content .hotel p {
+		
+		padding: 0 30px 40px;
+		margin: 0 0 -25px;
+		background: #f7f7f7;
+		font-size: 16px;
+		line-height: 26px;
+		border-radius: 0 0 5px 5px;
+	}
 
-			.l-content .tumbler__thumb .button {
-				
-				margin: -25px 0 -27px;
-				background: #f7f7f7;
-				font-size: 14px;
-				line-height: 26px;
-				padding: 13px;
-				border-radius: 0 0 5px 5px;
-			}
+	.l-content .button {
+		
+		margin: 0 0 -27px;
+		font-size: 14px;
+		line-height: 26px;
+		padding: 13px;
+	}
 
