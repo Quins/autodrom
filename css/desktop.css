@@ -39,7 +39,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* Common (common styles) */
 body, input, textarea, select, button {
 	
-	font-family: "Europe", Arial, sans-serif;
+	font-family: "Europe", Arial, sans-serif !important;
 }
 
 body {
@@ -170,7 +170,7 @@ button::-moz-focus-inner {
 	.l-header .l-header-inside {
 
 		margin: 0 auto;
-		max-width: 1366px;
+		width: 1366px;
 		font-size: 0;
 	}
 
@@ -236,7 +236,7 @@ button::-moz-focus-inner {
 	display: inline-block;
 	vertical-align: top;
 	padding: 0 55px 0 60px;
-	width: 100px;
+	width: 102px;
 	height: 88px;
 	line-height: 88px;
 	text-indent: -9999px;
@@ -262,7 +262,7 @@ button::-moz-focus-inner {
 
 		content: "";
 		display: block;
-		width: 101px;
+		width: 102px;
 		height: 54px;
 		margin-left: -48px;
 		margin-top: -27px;
@@ -1344,6 +1344,7 @@ a.b-white-button:hover {
 			right: 0;
 			font-size: 26px;
 			line-height: 34px;
+			color: #fff;
 			background: rgba(0,0,0,.75);
 		}
 
@@ -1696,41 +1697,144 @@ a.b-white-button:hover {
 
 /* Trash */ 
 
-.page__content {
+.l-content {
 
-	margin: 0 325px 0 290px;
+	min-height: 400px;
 }
 
-.hotel {
+.l-content .page__title {
 
-	margin: 60px 0 0;
+	padding: 16px 0;
 }
 
-	.hotel h2 {
+	.l-content .page__title_image {
+
+		top: 0;
+	}
+
+	.l-content .page__title_gradient {
+
+		top: 0;
+	}
+
+	.l-content .page__title_in {
+
+		padding: 0;
+	}
+
+#sideNavBox {
+
+	float: none;
+	margin: 0 370px 0 0;
+	width: 255px;
+	position: absolute;
+	top: 195px;
+	right: 50%;
+}
+
+.l-content .vert-nav {
+
+	border-radius: 5px;
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+	.l-content .arrow {
+
+		display: none;
+	}
+
+	.l-content .vert-nav__title {
+
+		border-radius: 5px 5px 0 0;
+		margin: 0;
+		font-size: 20px;
+		line-height: 22px;
+		padding: 20px;
+		font-family: "EuropeDemi", sans-serif;
+		font-weight: bold;
+		background: #091f33;
+		color: #fff;
+		text-transform: uppercase;
+	}
+
+		.l-content .vert-nav__title a {
+
+			display: block;
+			color: #fff;
+			padding: 20px;
+			margin: -20px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+		}
+
+	.l-content .vert-nav .vert-nav {
+
+		margin: 0;
+		padding: 20px;
+		font-size: 16px;
+		line-height: 20px;
+		box-shadow: none;
+		border-radius: none;
+	}
+
+	.l-content .vert-nav__item .vert-nav__item {
+
+		margin: 0;
+		padding: 10px 0;
+	}
+
+#sideNavBox hr {
+
+	display: none;
+}
+
+.l-content .page__content {
+
+	margin: 0 auto;
+	padding: 0 352px 0 350px;
+	max-width: 1366px;
+}
+
+.l-content .hotel {
+
+	padding: 60px 0 0;
+	margin: 0;
+}
+
+	.l-content .hotel h2 {
 
 		font-family: "EuropeDemi", sans-serif;
 		font-size: 20px;
 		font-weight: bold;
 		line-height: 50px;
 		text-transform: uppercase;
+		margin: 0;
 	}
 
-	.tumbler {
+	.l-content .tumbler {
 
 		float: none;
 		display: block;
 		width: auto;
 		margin: 0;
+		font-size: 0;
+		line-height: 0;
 	}
 
-		.tumbler__main {
+		.l-content .tumbler__main {
 
 			margin: 0;
 			border-radius: 5px 5px 0 0;
 			overflow: hidden;
 		}
 
-		.tumbler__thumbs {
+			.l-content .tumbler__main img {
+
+				border-radius: 0;
+			}
+
+		.l-content .tumbler__thumbs {
 
 			line-height: 45px;
 			margin: 0;
@@ -1738,7 +1842,7 @@ a.b-white-button:hover {
 			background: #f7f7f7;
 		}
 
-			.tumbler__thumb {
+			.l-content .tumbler__thumb {
 
 				display: inline-block;
 				vertical-align: middle;
@@ -1751,7 +1855,7 @@ a.b-white-button:hover {
 				margin: 0 4px;
 			}
 
-			.tumbler__thumb a {
+			.l-content .tumbler__thumb a {
 				
 				display: block;
 				-moz-box-sizing: content-box;
@@ -1763,12 +1867,12 @@ a.b-white-button:hover {
 				margin: -1px;
 			}
 
-			.tumbler__thumb img {
+			.l-content .tumbler__thumb img {
 				
 				display: none;
 			}
 
-			.tumbler__thumb p {
+			.l-content .tumbler__thumb p {
 				
 				padding: 0 30px 40px;
 				margin: 0;
@@ -1778,7 +1882,7 @@ a.b-white-button:hover {
 				border-radius: 0 0 5px 5px;
 			}
 
-			.tumbler__thumb .button {
+			.l-content .tumbler__thumb .button {
 				
 				margin: -25px 0 -27px;
 				background: #f7f7f7;
