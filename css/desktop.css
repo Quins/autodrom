@@ -881,7 +881,7 @@ button::-moz-focus-inner {
 
 		width: 368px;
 		margin: 0 15px;
-		height: 350px;
+		height: 370px;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -929,6 +929,10 @@ button::-moz-focus-inner {
 			padding: 0 18px 15px;
 			font-size: 16px;
 			line-height: 20px;
+			height: 60px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
 			font-family: "Europe", sans-serif;
 			color: #000;
 			background: #fff;
