@@ -1,3 +1,8 @@
+.g-portable {
+
+	display: none !important;
+}
+
 /*@media (min-width: 1300px) {
 
 	.g-portable {
