@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-/*	$('#social-stream').dcSocialStream({
+	$('#social-stream').dcSocialStream({
 		feeds: {
 			facebook: {
 				id: '664264196953460'
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		iconPath: 'images/dcsns-dark/',
 		imagePath: 'images/dcsns-dark/'
 	});
-*/
+
 	$("[data-counter]").counter("12/10/2014 11:00 GMT");
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
