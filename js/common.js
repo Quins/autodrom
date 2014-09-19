@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$('#social-stream').dcSocialStream({
+/*	$('#social-stream').dcSocialStream({
 		feeds: {
 			facebook: {
 				id: '664264196953460'
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		iconPath: 'images/dcsns-dark/',
 		imagePath: 'images/dcsns-dark/'
 	});
-
+*/
 	$("[data-counter]").counter("12/10/2014 11:00 GMT");
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
@@ -79,6 +79,30 @@ $(document).ready(function() {
 			toggleOnOutsideClick: true
 		}, 
 		"press-submenu": {
+			toggleOnOutsideClick: true
+		},
+		"scheme-freezone": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-t6": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-t5": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-t4": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-t2": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-t1": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-main": {
+			toggleOnOutsideClick: true
+		}, 
+		"scheme-paddock": {
 			toggleOnOutsideClick: true
 		}
 	});
@@ -303,6 +327,11 @@ $(document).ready(function() {
 					entity: $(this),
 					toggleClass: $(this).data('toggle-target-class')
 				}
+
+				$(this).on("toggle", function(event) {
+
+					toggle.on = event.state;
+				});
 			});
 
 			toggle.entity.click( function(event) {
@@ -317,10 +346,10 @@ $(document).ready(function() {
 
 				if (toggle.on) {
 
-					toggle.on = false;
+					emittoggle(false);
 				} else {
 
-					toggle.on = true;
+					emittoggle(true);
 
 					if (toggle.properties.toggleOnOutsideClick) {
 
@@ -344,7 +373,7 @@ $(document).ready(function() {
 
 									e.entity.toggleClass(e.toggleClass);
 								});
-								toggle.on = false;
+								emittoggle(false);
 								$(document).unbind('mouseup');
 							}
 						});
@@ -352,6 +381,16 @@ $(document).ready(function() {
 				}
 			});
 
+			function emittoggle(state) {
+
+				var e = $.Event( "toggle" );
+				e.state = state;
+
+				$("[data-toggle-target][data-toggle-target-descriptor='" + toggle.descriptor + "']").each(function() {
+
+					$(this).trigger(e);
+				});
+			}
 		});
 	};
 })(jQuery);
