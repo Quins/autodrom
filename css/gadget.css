@@ -9,7 +9,7 @@
 	display: none !important;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 992px) {
 
 	.g-portable {
 
@@ -17,7 +17,299 @@
 	}
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 1367px) {
+
+.l-header {}
+
+	.l-header:before {
+
+		margin-right: 495px;
+	}
+
+	.l-header .l-header-inside {
+
+		max-width: 990px;
+	}
+
+.l-content {}
+
+	.l-content .l-content-inside {
+
+		max-width: 990px;
+	}
+
+	.l-footer .l-footer-inside {
+
+		max-width: 990px;
+		padding: 40px 0;
+	}
+
+.b-logo {
+
+	padding: 0 20px 0 0;
+}
+
+.b-primary-menu {
+
+	margin-left: 90px;
+}
+
+	.b-primary-menu .b-primary-menu-clause {
+
+		font-size: 14px;
+	}
+
+.b-general-phone {
+
+	font-size: 14px;
+}
+
+.l-header .lang {
+
+	font-size: 0;
+}
+
+	.l-header .lang .lang__item {
+
+		font-size: 14px;
+		padding: 0 7px;
+	}
+
+.b-secondary-menu {
+
+	padding-left: 10px;
+}
+
+	.b-secondary-menu .b-secondary-menu-user-clause {
+
+		margin-left: 10px;
+	}
+
+.b-caption {}
+
+	.b-caption .b-caption-description {
+
+		font-size: 30px;
+		line-height: 35px;
+		margin-top: 5px;
+		margin-right: 575px;
+	}
+
+	.b-caption .b-caption-title {
+
+		margin-right: 455px;
+		float: none;
+	}
+
+.b-promos-collection {
+
+	padding: 35px 40px;
+	height: auto;
+}
+
+	.b-promos-collection .b-promos-article {
+
+		width: 450px;
+	}
+
+.b-news-collection {
+
+	padding: 0 24px 50px;
+}
+
+	.b-news-collection .b-news-collection-title {
+
+		padding-left: 14px;
+	}
+
+	.b-news-collection .b-news-article {
+
+		width: 294px;
+		height: 340px;
+		margin: 0 10px;
+	}
+
+		.b-news-collection .b-news-article .b-news-article-picture {
+
+			height: 195px;
+		}
+
+		.b-news-collection .b-news-article .b-news-article-title {
+
+			height: 80px;
+		}
+
+	.b-news-rotating-collection .b-news-rotating-collection-backward-roller {
+
+		left: -30px;
+	}
+
+	.b-news-rotating-collection .b-news-rotating-collection-forward-roller {
+
+		right: -30px;
+	}
+
+.b-advertising-section {
+
+	margin: 0 24px 40px;
+}
+
+	.b-advertising-section .b-advertising-article {
+
+		margin: 0 10px 10px;
+		width: 451px;
+	}
+
+.b-pictures-collection {
+
+	margin: 0 34px 50px;
+}
+
+	.b-pictures-collection .b-pictures-collection-inside {
+
+		height: 277px;
+		width: 638px;
+	}
+
+	.b-pictures-collection .b-pictures-article {
+
+		width: 417px;
+		height: 277px;
+	}
+
+	.b-rotating-pictures-collection .b-rotating-pictures-collection-roller {
+
+		top: 165px;
+	}
+
+.b-partners-collection {
+
+	margin: 0 34px 15px;
+}
+
+	.b-partners-collection .b-partners-collection-inside {
+
+		margin: 0 101px;
+	}
+
+	.b-partners-rotating-collection .b-partners-rotating-collection-backward-roller {
+
+		left: 32px;
+	}
+
+	.b-partners-rotating-collection .b-partners-rotating-collection-forward-roller {
+
+		right: 32px;
+	}
+
+.b-posts-collection {
+
+	padding: 0 25px 30px 45px;
+}
+
+
+.b-posts-collection .stream li {
+
+	width: 220px;
+}
+
+.b-general-contacts {
+
+	margin-left: 210px;
+}
+
+	.b-general-contacts .b-general-contacts-title {
+
+		font-size: 25px;
+		line-height: 30px;
+		padding: 0 0 10px;
+	}
+
+.b-mailing-form {
+
+	margin-right: 30px;
+}
+
+	.b-mailing-form .b-form-title {
+
+		font-size: 12px;
+		line-height: 25px;
+	}
+
+	.b-mailing-form .b-form-submit-fieldset {
+
+		top: 32px;
+	}
+
+.b-sociality-section {
+
+	float: left;
+	margin-right: 0;
+	width: auto;
+}
+
+	.b-sociality-section .b-sociality-section-title {
+
+		font-size: 12px;
+		line-height: 25px;
+		text-align: right;
+		margin-right: 10px;
+	}
+
+.b-sociality-menu {
+
+	width: auto;
+}
+
+	.b-sociality-menu .b-sociality-menu-clause {
+
+		margin-right: 10px;
+	}
+
+.b-phone-section {
+
+	margin: 0;
+}
+
+	.b-phone-section .b-phone-section-title {
+
+		text-align: right;
+		font-size: 12px;
+		line-height: 25px;
+	}
+
+	.b-phone-section .b-phone-section-contents {
+
+		text-align: right;
+		font-size: 12px;
+		line-height: 25px;
+	}
+
+.b-navigation {
+
+	padding: 40px 0 0;
+}
+
+	.b-navigation .b-navigation-section {
+
+		padding-right: 30px;
+	}
+
+		.b-navigation .b-navigation-section .b-navigation-section-title {
+
+			font-size: 14px;
+		}
+
+		.b-auxiliary-menu {
+
+			max-width: 80px;
+			font-size: 11px;
+			line-height: 14px;
+		}
+
+}
+
+@media (max-width: 991px) {
 
 .l-header {
 
@@ -91,6 +383,7 @@
 .l-header .lang {
 
 	line-height: 50px;
+	font-size: 0;
 }
 
 	.l-header .lang .lang__item {

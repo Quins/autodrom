@@ -546,6 +546,22 @@ button::-moz-focus-inner {
 			background: url(../i/graphics.png) no-repeat -146px 0;
 		}
 
+			.b-secondary-menu .b-secondary-menu-user-clause .login {
+
+				display: block;
+				height: 100%;
+				margin: 0;
+				position: relative;
+			}
+
+				.b-secondary-menu .b-secondary-menu-user-clause .login .login__icon {
+
+					display: block;
+					width: auto;
+					height: 100%;
+					background: none;
+				}
+
 		.b-secondary-menu .b-secondary-menu-clause .b-secondary-menu-clause-link {
 
 			color: #fff;
@@ -903,6 +919,7 @@ button::-moz-focus-inner {
 		text-transform: uppercase;
 		font-size: 0;
 		line-height: 32px;
+		margin: 0;
 	}
 
 		.b-news-collection .b-news-collection-guide .b-news-collection-guide-clause {
@@ -1321,6 +1338,7 @@ a.b-white-button:hover {
 		.b-advertising-section .b-advertising-article img {
 
 			width: 100%;
+			display: block;
 		}
 
 .b-pictures-collection {
@@ -1445,6 +1463,7 @@ a.b-white-button:hover {
 
 	.b-partners-collection .b-partners-article {
 
+		vertical-align: top;
 		display: inline-block;
 		padding: 15px 25px;
 		width: 190px;

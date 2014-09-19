@@ -23,7 +23,8 @@ $(document).ready(function() {
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
-		activeClassName: "b-pictures-current-article"
+		activeClassName: "b-pictures-current-article",
+		separation: 120
 	});
 
 	$("[data-waterwheelcarousel-roller]").each( function() {
@@ -52,7 +53,15 @@ $(document).ready(function() {
 
 			offsetWidth: 190, 
 			visibleFrameClass: "b-partners-visible-article", 
+			invisibleFrameClass: "g-hidden", 
 			disabledRollerClass: "b-partners-rotating-collection-disabled-roller"
+		}, 
+		"news-index": {
+
+			offsetWidth: 368, 
+			visibleFrameClass: "b-news-visible-article", 
+			invisibleFrameClass: "g-hidden", 
+			disabledRollerClass: "b-news-rotating-collection-disabled-roller"
 		}
 	});
 
