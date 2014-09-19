@@ -92,13 +92,18 @@
 		font-size: 30px;
 		line-height: 35px;
 		margin-top: 5px;
-		margin-right: 575px;
+		margin-right: 400px;
 	}
 
 	.b-caption .b-caption-title {
 
 		margin-right: 455px;
 		float: none;
+	}
+
+	.b-caption .b-caption-sociality-menu {
+
+		width: 204px;
 	}
 
 .b-promos-collection {
@@ -306,6 +311,40 @@
 			font-size: 11px;
 			line-height: 14px;
 		}
+
+.l-content .page__container {
+
+	max-width: 990px;
+}
+
+.l-content .page__title_in {
+
+	padding: 0;
+}
+
+.l-content #DeltaPlaceHolderMain .page__content {
+
+	max-width: 990px;
+	padding-left: 250px;
+	padding-right: 285px;
+}
+
+#sideNavBox {
+
+	margin-right: 270px;
+	width: 225px;
+}
+
+.l-content .page__right {
+
+	width: 260px;
+	margin-left: 235px;
+}
+
+.l-content #DeltaPlaceHolderMain .page__content._no-right-indent {
+
+	padding-left: 250px;
+}
 
 }
 
