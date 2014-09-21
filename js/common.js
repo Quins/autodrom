@@ -2,24 +2,24 @@ $(document).ready(function() {
 	
 	if($('#social-stream').length) {
 		
-		$('#social-stream').dcSocialStream({
-			feeds: {
-				facebook: {
-					id: '664264196953460'
-				}
-			},
-			rotate: {
-				delay: 0
-			},
-			control: false,
-			filter: true,
-			wall: true,
-			cache: false,
-			max: 'limit',
-			limit: 10,
-			iconPath: 'images/dcsns-dark/',
-			imagePath: 'images/dcsns-dark/'
-		});
+	$('#social-stream').dcSocialStream({
+		feeds: {
+			facebook: {
+				id: '664264196953460'
+			}
+		},
+		rotate: {
+			delay: 0
+		},
+		control: false,
+		filter: true,
+		wall: true,
+		cache: false,
+		max: 'limit',
+		limit: 10,
+		iconPath: 'images/dcsns-dark/',
+		imagePath: 'images/dcsns-dark/'
+	});
 	}
 
 	$("[data-counter]").counter("12/10/2014 11:00 GMT");
@@ -30,7 +30,49 @@ $(document).ready(function() {
 		separation: 120
 	});
 
-	$("[data-waterwheelcarousel-roller]").each( function() {
+	$('.b-news-collection').hide();
+
+	$.ajax({
+	    url: "/_api/web/Lists(guid'5468392e-0a13-46f1-866b-122e3db7f625')/items?$select=Id,Title,News_Image,News_PublicationDate,News_Tags&$orderby=News_PublicationDate desc",
+	    method: 'GET',
+	    headers: { "accept": "application/json;odata=verbose" },
+	    success: function (data) {
+	        var results = data.d.results;
+	        var grouped = {};
+	        var labelDesriptorMap = {
+	            'Трасса': 'route',
+	            'Видео': 'video',
+	            'Автоспорт': 'sport'
+	        };
+
+	        for (var i = 0; i < results.length; i++) {
+	            var item = results[i];
+	            item.News_PublicationDate = new Date(item.News_PublicationDate);
+
+	            var desc = labelDesriptorMap[item.News_Tags.results[0].Label];
+	            if (!grouped[desc]) {
+	                grouped[desc] = [[]];
+	            }
+	            if (grouped[desc][grouped[desc].length - 1].length == 3) {
+	                grouped[desc].push([]);
+	            }
+	            grouped[desc][grouped[desc].length - 1].push(item);
+	        }
+
+	        ko.applyBindings(grouped, $('.b-news-collection')[0]);
+
+			$('.b-news-collection').show();
+
+	        if ($("[data-tabulator]").length)
+	            initializeTabulators();
+
+	        if ($("[data-rotator]").length)
+	            initializeRotators();
+	    }
+	});
+
+
+    $("[data-waterwheelcarousel-roller]").each( function() {
 
 		var direction = $(this).data("waterwheelcarousel-roller-direction");
 		if (direction == 'forward') {
@@ -115,6 +157,37 @@ $(document).ready(function() {
 
     if($("[data-rotator]").length)
         initializeRotators();
+
+    $("[data-screen]").screens({
+
+    	"secondary": {
+
+    		showAnimation: function(entity) {
+
+    			$(".l-outer").animate({
+
+    				"margin-left": 0
+    			}, 400);
+
+    			$(".b-navigation").animate({
+
+    				"left": 0
+    			}, 400);
+    		}, 
+    		hideAnimation: function(entity) {
+
+    			$(".l-outer").animate({
+
+    				"margin-left": "-280px"
+    			}, 400);
+
+    			$(".b-navigation").animate({
+
+    				"left": "-280px"
+    			}, 400);
+    		}
+    	}
+    })
 
 });
 
@@ -394,6 +467,50 @@ $(document).ready(function() {
 					$(this).trigger(e);
 				});
 			}
+		});
+	};
+})(jQuery);
+
+/* Screens */
+
+(function( $ ) {
+	$.fn.screens = function(options) {
+
+		return this.each( function() {
+
+			var scr = {
+				descriptor: ($(this).data("screen-descriptor") ? $(this).data("screen-descriptor") : ""), 
+				entity: $(this), 
+				on: false, 
+				openers: []
+			};
+
+			scr.properties = $.extend({
+				screenOnOutsideClick: true, 
+				showAnimation: function() {
+
+					return false;
+				},
+				hideAnimation: function() {
+
+					return false;
+				}
+			}, options[scr.descriptor]);
+
+			$("[data-screen-opener][data-screen-opener-descriptor='" + scr.descriptor + "']").each( function(i) {
+
+				scr.openers[i] = $(this);
+
+				$(this).click( function(event) {
+
+					event.preventDefault();
+					scr.on = !scr.on;
+					if (scr.on)
+						scr.properties.showAnimation(scr.entity);
+					else
+						scr.properties.hideAnimation(scr.entity);
+				});
+			});
 		});
 	};
 })(jQuery);

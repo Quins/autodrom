@@ -1757,6 +1757,7 @@ a.b-white-button:hover {
 .b-scheme-section {
 
 	position: relative;
+	margin-bottom: 25px;
 }
 
 	.b-scheme-section .b-scheme-picture {
@@ -2375,7 +2376,7 @@ a.b-white-button:hover {
 }
 .l-content #DeltaPlaceHolderMain .page__content._no-right-indent {
 
-	padding: 60px 0 60px 350px;
+	padding: 60px 53px 60px 350px;
 }
 .l-content .page__content {
 
