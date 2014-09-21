@@ -2081,6 +2081,10 @@ a.b-white-button:hover {
 					color: #d60b05;
 				}
 
+		.b-scheme-section .b-scheme-popups-collection .b-scheme-paddock-popup {
+
+			display: none;
+		}
 
 
 /* Trash */ 
