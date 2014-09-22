@@ -6,10 +6,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @font-face {
 
 	font-family: "Europe";
-	src: url("../fonts/Europe/regular.eot");
-	src: url("../fonts/Europe/regular.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/Europe/regular.woff") format("woff"),
-		 url("../fonts/Europe/regular.ttf") format("truetype");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/Europe/regular.eot");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/Europe/regular.eot?#iefix") format("embedded-opentype"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/Europe/regular.woff") format("woff"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/Europe/regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -17,10 +17,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @font-face {
 
 	font-family: "EuropeDemi";
-	src: url("../fonts/EuropeDemi/regular.eot");
-	src: url("../fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/EuropeDemi/regular.woff") format("woff"),
-		 url("../fonts/EuropeDemi/regular.ttf") format("truetype");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.eot");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.woff") format("woff"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -28,10 +28,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @font-face {
 
 	font-family: "EuropeDemi";
-	src: url("../fonts/EuropeDemi/regular.eot");
-	src: url("../fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
-		 url("../fonts/EuropeDemi/regular.woff") format("woff"),
-		 url("../fonts/EuropeDemi/regular.ttf") format("truetype");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.eot");
+	src: url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.eot?#iefix") format("embedded-opentype"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.woff") format("woff"),
+		 url("http://sochiautodrom.articul.ru:53080/_catalogs/masterpage/fonts/EuropeDemi/regular.ttf") format("truetype");
 	font-weight: bold;
 	font-style: normal;
 }
@@ -172,6 +172,7 @@ button::-moz-focus-inner {
 		margin: 0 auto;
 		max-width: 1300px;
 		font-size: 0;
+		position: relative;
 	}
 
 	.l-header .l-header-righthand-section {
@@ -571,6 +572,126 @@ button::-moz-focus-inner {
 			height: 100%;
 		}
 
+.b-search-form {
+
+	display: none;
+}
+
+.b-search-opened-form {
+
+	display: block;
+	position: absolute;
+	top: 0; 
+	right: 0;
+	left: 275px;
+	height: 88px;
+	background: #d60a05;
+	font-size: 0px;
+}
+
+	.b-search-form .b-form-fieldset {
+
+		display: inline-block;
+		vertical-align: top;
+		height: 50px;
+		margin: 19px 0 19px 15px;
+		padding: 0;
+		border: none;
+	}
+
+	.b-search-form .b-form-text-fieldset {
+
+		box-sizing: border-box;
+		width: 100%;
+		margin: 24px 0;
+		padding-right: 90px;
+		margin-right: -90px;
+		padding-left: 15px;
+	}
+
+		.b-search-form .b-form-text-fieldset .b-form-fieldset-input {
+
+			width: 100%;
+			font-size: 20px;
+			background: none;
+			border: none;
+			border-bottom: 1px solid #eee;
+			padding: 7px 10px;
+			margin: 0;
+			color: #fff;
+		}
+
+	.b-search-form .b-form-submit-fieldset {
+
+		width: 30px;
+	}
+
+		.b-search-form .b-form-submit-fieldset .b-form-fieldset-input {
+
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 50px;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			text-indent: -9999px;
+		}
+		.b-search-form .b-form-submit-fieldset .b-form-fieldset-input:hover {
+
+			cursor: pointer;
+		}
+
+			.b-search-form .b-form-submit-fieldset .b-form-fieldset-input:before {
+
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 17px;
+				height: 17px;
+				margin: -7px 0 0 -8px;
+				background: url(../i/graphics.png) no-repeat -120px 0;
+			}
+
+	.b-search-form .b-form-reset-fieldset {
+
+		width: 30px;
+	}
+
+		.b-search-form .b-form-reset-fieldset .b-form-fieldset-input {
+
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 50px;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			text-indent: -9999px;
+		}
+		.b-search-form .b-form-reset-fieldset .b-form-fieldset-input:hover {
+
+			cursor: pointer;
+		}
+
+			.b-search-form .b-form-reset-fieldset .b-form-fieldset-input:before {
+
+				content: "\00D7";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 30px;
+				height: 30px;
+				margin: -15px 0 0 -15px;
+				color: #fff;
+				font-size: 40px;
+				line-height: 32px;
+				text-indent: 0;
+			}
+
 .b-navigation {
 
 	font-size: 0;
@@ -611,6 +732,13 @@ button::-moz-focus-inner {
 	max-width: 100px;
 	font-size: 12px;
 	line-height: 16px;
+}
+
+@media (min-width: 992px) {
+
+	.b-auxiliary-menu {
+		display: block !important;
+	}
 }
 
 	.b-auxiliary-menu .b-auxiliary-menu-clause {
@@ -2475,7 +2603,7 @@ a.b-white-button:hover {
 				margin: -1px;
 			}
 
-			.l-content .tumbler__thumb img {
+			.l-content .page__content-html .tumbler__thumb img {
 				
 				display: none;
 			}

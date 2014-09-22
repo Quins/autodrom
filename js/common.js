@@ -154,7 +154,8 @@ $(document).ready(function() {
 		}, 
 		"scheme-paddock": {
 			toggleOnOutsideClick: true
-		}
+		},
+		"searchbox": {}
 	});
 
     if($("[data-tabulator]").length)
@@ -558,6 +559,21 @@ $(document).ready(function() {
 					else
 						scr.properties.hideAnimation(scr.entity);
 				});
+			});
+
+			$(document).mouseup(function (event) {
+
+				if (scr.on) {
+
+					event.preventDefault();
+					var container = $(".b-navigation");
+
+					if (!container.is(event.target) && container.has(event.target).length === 0) {
+
+						scr.on = false;
+						scr.properties.hideAnimation(scr.entity);
+					}
+				}
 			});
 		});
 	};
