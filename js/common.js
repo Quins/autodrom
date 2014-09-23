@@ -27,7 +27,9 @@ $(document).ready(function() {
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
 		activeClassName: "b-pictures-current-article",
-		separation: $(".l-content").width() / 8
+		separation: parseInt($("[data-waterwheelcarousel]").width() / 6),
+		forcedImageWidth: parseInt($("[data-waterwheelcarousel]").height() * 1.5),
+		forcedImageHeight: parseInt($("[data-waterwheelcarousel]").height())
 	});
 
 /*	$('.b-news-collection').hide();
@@ -92,6 +94,23 @@ $(document).ready(function() {
 		}
 	});
 
+    var resizeTimeout;
+    $(window).resize( function() {
+
+    	if (resizeTimeout)
+    		clearTimeout(resizeTimeout);
+
+    	resizeTimeout = setTimeout( function() {
+
+    		waterwheel.reload({
+				activeClassName: "b-pictures-current-article",
+    			separation: parseInt(waterwheel.width() / 6), 
+		 		forcedImageWidth: parseInt(waterwheel.height() * 1.5),
+				forcedImageHeight: parseInt(waterwheel.height())
+  			});
+    	}, 600);
+    });
+
 	$("[data-reel]").reels({
 
 		"partners-index": {
@@ -155,7 +174,16 @@ $(document).ready(function() {
 		"scheme-paddock": {
 			toggleOnOutsideClick: true
 		},
-		"searchbox": {}
+		"searchbox": {}, 
+		"loges-platinum": {
+			toggleOnOutsideClick: true
+		},
+		"loges-gold": {
+			toggleOnOutsideClick: true
+		},
+		"loges-silver": {
+			toggleOnOutsideClick: true
+		}
 	});
 
     if($("[data-tabulator]").length)
@@ -206,21 +234,6 @@ $(document).ready(function() {
     			}, 400);
     		}
     	}
-    });
-
-    var resizeTimeout;
-    $(window).resize( function() {
-
-    	if (resizeTimeout)
-    		clearTimeout(resizeTimeout);
-
-    	resizeTimeout = setTimeout( function() {
-
-    		waterwheel.reload({
-				activeClassName: "b-pictures-current-article",
-    			separation: $(".l-content").width() / 8
-    		});
-    	}, 600);
     });
 
 });
@@ -568,7 +581,17 @@ $(document).ready(function() {
 					event.preventDefault();
 					var container = $(".b-navigation");
 
-					if (!container.is(event.target) && container.has(event.target).length === 0) {
+					var openers = false;
+
+					$.each(scr.openers, function(i,e) {
+
+						if (e.is(event.target) || e.has(event.target).length) {
+
+							openers = true;
+						}
+					});
+
+					if (!container.is(event.target) && container.has(event.target).length === 0 && !openers) {
 
 						scr.on = false;
 						scr.properties.hideAnimation(scr.entity);
