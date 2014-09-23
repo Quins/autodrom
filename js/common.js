@@ -2,24 +2,33 @@ $(document).ready(function() {
 	
 	if($('#social-stream').length) {
 		
-	$('#social-stream').dcSocialStream({
-		feeds: {
-			facebook: {
-				id: '664264196953460'
-			}
-		},
-		rotate: {
-			delay: 0
-		},
-		control: false,
-		filter: true,
-		wall: true,
-		cache: false,
-		max: 'limit',
-		limit: 10,
-		iconPath: '/_catalogs/masterpage/images/dcsns-dark/',
-		imagePath: '/_catalogs/masterpage/images/dcsns-dark/'
-	});
+		$('#social-stream').dcSocialStream({
+			feeds: {
+				facebook: {
+					id: '664264196953460'
+				},
+				instagram: {
+					id: '!248535263',
+					/*accessToken: 'bcc5fcfe46534172a4fc8bc5a373332e',
+					redirectUrl: 'http://sochiautodrom.ru',
+					clientId: '56d0347235b2422495a453ea2108cacd',*/
+					accessToken: '248535263.3a67c3d.833195c6e264445a8b39bcf7998dec2f',
+					redirectUrl: 'http://sochiautodrom.articul.ru:53080',
+					clientId: '3a67c3dec9dd40c5a15a2ef86bd8bbfc'
+				}
+			},
+			rotate: {
+				delay: 0
+			},
+			control: false,
+			filter: true,
+			wall: true,
+			cache: false,
+			max: 'limit',
+			limit: 10,
+			iconPath: '/_catalogs/masterpage/images/dcsns-dark/',
+			imagePath: '/_catalogs/masterpage/images/dcsns-dark/'
+		});
 	}
 
 	$("[data-counter]").counter("13/10/2014 11:00 GMT");

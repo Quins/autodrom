@@ -2386,7 +2386,7 @@ a.b-white-button:hover {
 			vertical-align: middle;
 			width: 16px;
 			height: 16px;
-			background: #d60a05;
+			background: url(../i/graphics.png) -130px -235px no-repeat;
 		}
 
 		.b-loges-article .b-loges-article-pricing-table {}
@@ -2582,6 +2582,37 @@ a.b-white-button:hover {
 							max-width: 100%;
 						}
 
+					.b-offers-article .b-offers-article-contents .b-offers-article-pictures-collection .b-offers-article-pictures-collection-roller {
+
+						display: inline-block;
+						width: 50px;
+						height: 50px;
+						position: relative;
+						vertical-align: top;
+					}
+
+						.b-offers-article .b-offers-article-contents .b-offers-article-pictures-collection .b-offers-article-pictures-collection-roller:before {
+
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							width: 16px;
+							height: 14px;
+							margin: -8px 0 0 -7px;
+							background-image: url(../i/graphics.png);
+							background-repeat: no-repeat;
+						}
+						.b-offers-article .b-offers-article-contents .b-offers-article-pictures-collection .b-offers-article-pictures-collection-backward-roller:before {
+
+							background-position: -155px -235px;
+						}
+						.b-offers-article .b-offers-article-contents .b-offers-article-pictures-collection .b-offers-article-pictures-collection-forward-roller:before {
+
+							background-position: -180px -235px;
+						}
+
 					.b-offers-article .b-offers-article-contents .b-offers-article-pictures-collection .b-offers-article-pictures-collection-guide {
 
 						display: inline-block;
@@ -2595,7 +2626,7 @@ a.b-white-button:hover {
 							vertical-align: middle;
 							width: 12px;
 							height: 12px;
-							margin: 0 9px;
+							margin: 19px 9px;
 							border: 2px solid #112532;
 							box-sizing: border-box;
 							border-radius: 6px;
@@ -2705,7 +2736,7 @@ a.b-white-button:hover {
 						vertical-align: middle;
 						width: 16px;
 						height: 16px;
-						background: #d60a05;
+						background: url(../i/graphics.png) -130px -235px no-repeat;
 					}
 
 
