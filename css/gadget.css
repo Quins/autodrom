@@ -512,6 +512,7 @@
 	height: 50px;
 	line-height: 50px;
 	box-shadow: 0 0 5px rgba(0,0,0,.3);
+	overflow: hidden;
 }
 
 	.l-header:before {
@@ -529,6 +530,7 @@
 .l-content {
 
 	margin-top: 50px;
+	overflow: hidden;
 }
 
 .l-footer .l-footer-inside {
@@ -633,10 +635,25 @@
 		display: none;
 	}
 
+.b-search-form {
+	
+	display: block;
+	margin-top: 50px;
+	animation-duration: .3s;
+	animation-name: searchfloatdown;
+	-webkit-animation-duration: .3s;
+	-webkit-animation-name: searchfloatdown;
+}
+
 .b-search-opened-form {
 
 	left: 0;
 	height: 50px;
+	margin-top: 0px;
+	animation-duration: .3s;
+	animation-name: searchfloatup;
+	-webkit-animation-duration: .3s;
+	-webkit-animation-name: searchfloatup;
 }
 
 	.b-search-form .b-form-fieldset {
@@ -945,6 +962,12 @@
 			white-space: nowrap;
 			background: #000;
 		}
+
+			.b-navigation .b-navigation-section .b-navigation-section-title .b-navigation-section-title-link {
+
+				display: block;
+				margin-right: 35px;
+			}
 
 		.b-navigation .b-navigation-section .b-navigation-section-toggle {
 
@@ -1726,4 +1749,54 @@
 
 }
 
-/**/
+@keyframes searchfloatup {
+	
+	from {
+
+		margin-top: 50px;
+	}
+
+	to {
+
+		margin-top: 0px;
+	}
+}
+
+@-webkit-keyframes searchfloatup {
+	
+	from {
+
+		margin-top: 50px;
+	}
+
+	to {
+
+		margin-top: 0px;
+	}
+}
+
+@keyframes searchfloatdown {
+	
+	from {
+
+		margin-top: 0px;
+	}
+
+	to {
+
+		margin-top: 50px;
+	}
+}
+
+@-webkit-keyframes searchfloatdown {
+	
+	from {
+
+		margin-top: 0px;
+	}
+
+	to {
+
+		margin-top: 50px;
+	}
+}

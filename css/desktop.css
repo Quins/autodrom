@@ -118,10 +118,10 @@ button::-moz-focus-inner {
 	font-size: 0;
 	line-height: 0;
 	/*min-width: 1300px; /* REMOVE THIS */
-	-webkit-overflow-scrolling: touch;
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
+	-webkit-overflow-scrolling: touch;
 }
 
 	.l-outer .l-outer-section {
@@ -148,6 +148,7 @@ button::-moz-focus-inner {
 	height: 88px;
 	background: #d60a05;
 	position: fixed;
+	top: 0;
 	z-index: 100;
 	color: #fff;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -447,7 +448,8 @@ button::-moz-focus-inner {
 	display: block;
 	font-size: 16px;
 	line-height: 20px;
-	padding: 20px 0 5px 0;
+	padding: 20px 0 10px 0;
+	margin-right: -4px;
 }
 
 .b-language-menu {
@@ -575,19 +577,27 @@ button::-moz-focus-inner {
 
 .b-search-form {
 
-	display: none;
+	position: absolute;
+	top: 0;
+	height: 0px;
+	margin-top: 88px;
+	overflow: hidden;
 }
 
 .b-search-opened-form {
 
 	display: block;
 	position: absolute;
-	top: 0; 
-	right: 0;
+	right: -4px;
 	left: 275px;
 	height: 88px;
+	margin-top: 0;
 	background: #d60a05;
 	font-size: 0px;
+	animation-duration: .3s;
+	animation-name: largesearchfloatup;
+	-webkit-animation-duration: .3s;
+	-webkit-animation-name: largesearchfloatup;
 }
 
 	.b-search-form .b-form-fieldset {
@@ -1597,6 +1607,7 @@ a.b-white-button:hover {
 		padding: 15px 25px;
 		width: 190px;
 		height: 110px;
+		text-indent: 0;
 		-moz-box-sizing: content-box;
 		-webkit-box-sizing: content-box;
 		box-sizing: content-box;
@@ -3265,6 +3276,34 @@ a.b-white-button:hover {
 		font-weight: inherit;
 	}
 
+@keyframes largesearchfloatup {
+	
+	from {
 
+		height: 0px;
+		margin-top: 88px;
+	}
+
+	to {
+
+		height: 88px;
+		margin-top: 0px;
+	}
+}
+
+@-webkit-keyframes largesearchfloatup {
+	
+	from {
+
+		height: 0px;
+		margin-top: 88px;
+	}
+
+	to {
+
+		height: 88px;
+		margin-top: 0px;
+	}
+}
 
 

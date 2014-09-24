@@ -2,7 +2,7 @@ $(document).ready(function() {
 	
 	if($('#social-stream').length) {
 		
-		$('#social-stream').dcSocialStream({
+/*		$('#social-stream').dcSocialStream({
 			feeds: {
 				facebook: {
 					id: '664264196953460'
@@ -11,7 +11,7 @@ $(document).ready(function() {
 					id: '!248535263',
 					/*accessToken: 'bcc5fcfe46534172a4fc8bc5a373332e',
 					redirectUrl: 'http://sochiautodrom.ru',
-					clientId: '56d0347235b2422495a453ea2108cacd',*/
+					clientId: '56d0347235b2422495a453ea2108cacd',*//*
 					accessToken: '248535263.3a67c3d.833195c6e264445a8b39bcf7998dec2f',
 					redirectUrl: 'http://sochiautodrom.articul.ru:53080',
 					clientId: '3a67c3dec9dd40c5a15a2ef86bd8bbfc'
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			limit: 10,
 			iconPath: '/_catalogs/masterpage/images/dcsns-dark/',
 			imagePath: '/_catalogs/masterpage/images/dcsns-dark/'
-		});
+		});*/
 	}
 
 	$("[data-counter]").counter("13/10/2014 11:00 GMT");
@@ -37,51 +37,9 @@ $(document).ready(function() {
 
 		activeClassName: "b-pictures-current-article",
 		separation: parseInt($("[data-waterwheelcarousel]").width() / 6),
-		forcedImageWidth: parseInt($("[data-waterwheelcarousel]").height() * 1.5),
-		forcedImageHeight: parseInt($("[data-waterwheelcarousel]").height())
+		forcedImageWidth: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? $("[data-waterwheelcarousel]").width() : parseInt($("[data-waterwheelcarousel]").height() * 1.5)),
+		forcedImageHeight: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? parseInt(2 * $("[data-waterwheelcarousel]").width() / 3) : parseInt($("[data-waterwheelcarousel]").height()))
 	});
-
-/*	$('.b-news-collection').hide();
-
-	$.ajax({
-	    url: "/_api/web/Lists(guid'5468392e-0a13-46f1-866b-122e3db7f625')/items?$select=Id,Title,News_Image,News_PublicationDate,News_Tags&$orderby=News_PublicationDate desc",
-	    method: 'GET',
-	    headers: { "accept": "application/json;odata=verbose" },
-	    success: function (data) {
-	        var results = data.d.results;
-	        var grouped = {};
-	        var labelDesriptorMap = {
-	            'Трасса': 'route',
-	            'Видео': 'video',
-	            'Автоспорт': 'sport'
-	        };
-
-	        for (var i = 0; i < results.length; i++) {
-	            var item = results[i];
-	            item.News_PublicationDate = new Date(item.News_PublicationDate);
-
-	            var desc = labelDesriptorMap[item.News_Tags.results[0].Label];
-	            if (!grouped[desc]) {
-	                grouped[desc] = [[]];
-	            }
-	            if (grouped[desc][grouped[desc].length - 1].length == 3) {
-	                grouped[desc].push([]);
-	            }
-	            grouped[desc][grouped[desc].length - 1].push(item);
-	        }
-
-	        ko.applyBindings(grouped, $('.b-news-collection')[0]);
-
-			$('.b-news-collection').show();
-
-	        if ($("[data-tabulator]").length)
-	            initializeTabulators();
-
-	        if ($("[data-rotator]").length)
-	            initializeRotators();
-	    }
-	});*/
-
 
     $("[data-waterwheelcarousel-roller]").each( function() {
 
@@ -120,8 +78,8 @@ $(document).ready(function() {
 		waterwheel.reload({
 			activeClassName: "b-pictures-current-article",
 			separation: parseInt(waterwheel.width() / 6), 
-				forcedImageWidth: parseInt(waterwheel.height() * 1.5),
-			forcedImageHeight: parseInt(waterwheel.height())
+			forcedImageWidth: ( parseInt(waterwheel.height() * 1.5) > waterwheel.width() ? waterwheel.width() : parseInt(waterwheel.height() * 1.5) ),
+			forcedImageHeight: ( parseInt(waterwheel.height() * 1.5) > waterwheel.width() ? parseInt(2 * waterwheel.width() / 3) : parseInt(waterwheel.height()) )
 		});
     });
 
@@ -357,30 +315,50 @@ $(document).ready(function() {
 				offsetWidth: reel.framesRepository.find("[data-reel-frame]").first().width()
 			}, options[reel.descriptor]);
 
-			reel.framesRepository.find("[data-reel-frame]").each( function(i) {
+			function calcOffset() {
 
-				reel.frames[i] = {
+				var i = reel.frames.length,
+					cwidth = 0, 
+					twidth = 0;
 
-					entity: $(this),
-					width: parseInt($(this).width()),
-					visible: false
+				for (var j = 0; j < reel.frames.length; j++) {
+
+					twidth += reel.frames[j].entity.outerWidth();
+				};
+
+				while (i > 0 && cwidth <= reel.framesRepository.width()) {
+
+					cwidth += reel.frames[--i].entity.outerWidth();
 				}
-			});
 
-			if (typeof(reel.properties.offsetWidth) === "function") {
+				reel.maximumOffset = reel.framesRepository.width() - twidth;
 
-				reel.lastFrameOffset = reel.frames.length - Math.floor(reel.framesRepository.width() / reel.properties.offsetWidth()) + 1;
-			} else {
+				reel.lastFrameOffset = i + 1;
 
-				reel.lastFrameOffset = reel.frames.length - Math.floor(reel.framesRepository.width() / reel.properties.offsetWidth) + 1;
+				console.log(reel.lastFrameOffset, reel.maximumOffset);
 			}
+
+			function init() {
+
+				reel.framesRepository.find("[data-reel-frame]").each( function(i) {
+
+					reel.frames[i] = {
+
+						entity: $(this),
+						visible: false
+					}
+				});
+			}
+			init();
+
+			$(this).on("reload", init);
 
 			reel.forwardRollers.each( function() {
 
 				$(this).click( function(event) {
 
 					event.preventDefault();
-					leftOffset(reel.currentFrameOffset + 1);
+					setOffset(reel.currentFrameOffset + 1);
 				});
 			});
 
@@ -389,66 +367,39 @@ $(document).ready(function() {
 				$(this).click( function(event) {
 
 					event.preventDefault();
-					leftOffset(reel.currentFrameOffset - 1);
+					setOffset(reel.currentFrameOffset - 1);
 				});
 			});
 
-			if (reel.lastFrameOffset < 1)
-				reel.forwardRollers.addClass(reel.properties.disabledRollerClass);
+			reel.forwardRollers.removeClass(reel.properties.disabledRollerClass);
+			reel.backwardRollers.removeClass(reel.properties.disabledRollerClass);
 
-			function leftOffset(offsetFrame) {
+			function setOffset(frame) {
 
-				var toMargin = 0;
+				calcOffset();
 
-				if (offsetFrame === undefined || offsetFrame > reel.lastFrameOffset || offsetFrame < 0) 
-					return false;
+				if (frame === undefined || frame > reel.lastFrameOffset)
+					frame = 0;
+
+				if (frame < 0)
+					frame = reel.lastFrameOffset;
 
 				var offsetWidth = 0;
-				if (typeof(reel.properties.offsetWidth) === "function") {
 
-					offsetWidth = reel.properties.offsetWidth();
-				} else {
+				for (var i = 0; i < frame; i++) {
 
-					offsetWidth = reel.properties.offsetWidth;
-				}
-
-				for (var i = 0; i < reel.lastFrameOffset; i++) {
-
-					if (i < offsetFrame) {
-						reel.frames[i].entity.css({
-							"overflow": "hidden"
-						}).animate({
-							"width": 0
-						}, 300, function() {
-							$(this).css({
-								"display": "none"
-							});
-						});
-					} else if (reel.frames[i].entity.width() < offsetWidth) {
-						reel.frames[i].entity.css({
-							"overflow": "hidden",
-							"display": "inline-block"
-						}).animate({
-							"width": offsetWidth
-						}, 300, function() {
-							$(this).css({
-								"overflow": "visible"
-							});
-						});
-					}
+					offsetWidth -= reel.frames[i].entity.outerWidth();
 				};
 
-				reel.currentFrameOffset = offsetFrame;
+				if (offsetWidth < reel.maximumOffset)
+					offsetWidth = reel.maximumOffset;
 
-				if (reel.currentFrameOffset == 0)
-					reel.backwardRollers.addClass(reel.properties.disabledRollerClass);
-				else
-					reel.backwardRollers.removeClass(reel.properties.disabledRollerClass);
+				reel.framesRepository.animate({
 
-				if (reel.currentFrameOffset == reel.lastFrameOffset)
-					reel.forwardRollers.addClass(reel.properties.disabledRollerClass);
-				else 
-					reel.forwardRollers.removeClass(reel.properties.disabledRollerClass);
+					"text-indent": offsetWidth
+				}, 300);
+
+				reel.currentFrameOffset = frame;
 			}
 		});
 	};
@@ -489,7 +440,7 @@ $(document).ready(function() {
 			toggle.entity.click( function(event) {
 
 				event.preventDefault();
-				$(document).unbind('mouseup');
+				$(document).unbind("mouseup").unbind("touchend");
 
 				$.each(toggle.targets, function(i, e) {
 
@@ -505,7 +456,7 @@ $(document).ready(function() {
 
 					if (toggle.properties.toggleOnOutsideClick) {
 
-						$(document).mouseup(function (event) {
+						$(document).on("mouseup touchend", function (event) {
 
 							var outside = 0;
 
@@ -526,7 +477,7 @@ $(document).ready(function() {
 									e.entity.toggleClass(e.toggleClass);
 								});
 								emittoggle(false);
-								$(document).unbind('mouseup');
+								$(document).unbind("mouseup").unbind("touchend");
 							}
 						});
 					}
@@ -588,7 +539,7 @@ $(document).ready(function() {
 				});
 			});
 
-			$(document).mouseup(function (event) {
+			$(document).on("mouseup touchend", function (event) {
 
 				if (scr.on) {
 
