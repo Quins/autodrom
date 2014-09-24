@@ -101,8 +101,21 @@ button::-moz-focus-inner {
 }
 
 .g-hidden {
-	
+
 	display: none !important;
+}
+
+.g-selectproof {
+
+	-moz-user-select: none; 
+	-webkit-user-select: none;
+	-ms-user-select: none; 
+	user-select: none; 
+
+	-webkit-user-drag: none; 
+	-moz-user-drag: none; 
+	-ms-user-drag: none; 
+	user-drag: none;
 }
 
 
@@ -2501,6 +2514,7 @@ a.b-white-button:hover {
 				font-size: 20px;
 				line-height: 48px;
 				padding: 0 30px;
+				margin: 0;
 				text-transform: uppercase;
 				background: #0a1b25;
 				border-radius: 5px;
@@ -2523,6 +2537,7 @@ a.b-white-button:hover {
 					text-align: center;
 					font-size: 30px;
 					line-height: 23px;
+					pointer-events: none;
 				}
 
 				.b-offers-article .b-offers-article-title .b-offers-article-title-link {
@@ -2749,6 +2764,13 @@ a.b-white-button:hover {
 						height: 16px;
 						background: url(../i/graphics.png) -130px -235px no-repeat;
 					}
+
+	.l-content .b-loges-article .b-loges-article-button {
+
+		display: block;
+		width: 200px;
+		margin: 0 auto;
+	}
 
 
 /* Trash */ 

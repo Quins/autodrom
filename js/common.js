@@ -2,7 +2,7 @@ $(document).ready(function() {
 	
 	if($('#social-stream').length) {
 		
-/*		$('#social-stream').dcSocialStream({
+		$('#social-stream').dcSocialStream({
 			feeds: {
 				facebook: {
 					id: '664264196953460'
@@ -11,7 +11,7 @@ $(document).ready(function() {
 					id: '!248535263',
 					/*accessToken: 'bcc5fcfe46534172a4fc8bc5a373332e',
 					redirectUrl: 'http://sochiautodrom.ru',
-					clientId: '56d0347235b2422495a453ea2108cacd',*//*
+					clientId: '56d0347235b2422495a453ea2108cacd',*/
 					accessToken: '248535263.3a67c3d.833195c6e264445a8b39bcf7998dec2f',
 					redirectUrl: 'http://sochiautodrom.articul.ru:53080',
 					clientId: '3a67c3dec9dd40c5a15a2ef86bd8bbfc'
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			limit: 10,
 			iconPath: '/_catalogs/masterpage/images/dcsns-dark/',
 			imagePath: '/_catalogs/masterpage/images/dcsns-dark/'
-		});*/
+		});
 	}
 
 	$("[data-counter]").counter("13/10/2014 11:00 GMT");
@@ -207,6 +207,20 @@ $(document).ready(function() {
     		}
     	}
     });
+
+    $("[data-reel]").swipes();
+
+	$("[data-reel]").on("qleftswipe", function(event) {
+
+		event.preventDefault();
+		console.log("left swipe happened!");
+	});
+
+	$("[data-reel]").on("qrightswipe", function(event) {
+
+		event.preventDefault();
+		console.log("right swipe happened!");
+	});
 
 });
 
@@ -401,6 +415,81 @@ $(document).ready(function() {
 
 				reel.currentFrameOffset = frame;
 			}
+		});
+	};
+})(jQuery);
+
+/* Swipes */
+
+(function( $ ) {
+	$.fn.swipes = function(options, callback) {
+
+		if (options && typeof(options) == "function") 
+			var callback = options;
+
+		return this.each( function() {
+
+			var sensitivity = 10, 
+				start = {};
+
+			$this = $(this).addClass("g-selectproof");
+
+			$this.on("touchstart mousedown", function(event) {
+
+				console.log("touchstart");
+
+				start.x = event.originalEvent.pageX;
+				start.y = event.originalEvent.pageY;
+			});
+
+			$this.on("touchend mouseup", function(endevent) {
+
+				console.log("touchend");
+
+				var stop = {
+
+					x: endevent.originalEvent.pageX,
+					y: endevent.originalEvent.pageY
+				}
+
+				if (d(start, stop) > sensitivity) {
+
+					var v = direction(start, stop, sensitivity);
+					if ($.inArray("left", v) > -1) 
+						$this.trigger("qleftswipe");
+					if ($.inArray("top", v) > -1) 
+						$this.trigger("qtopswipe");
+					if ($.inArray("right", v) > -1) 
+						$this.trigger("qrightswipe");
+					if ($.inArray("bottom", v) > -1) 
+						$this.trigger("qbottomswipe");
+				}
+			});
+
+			function d(a, b) {
+
+				return Math.sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
+			}
+
+			function direction(a, b, sens) {
+
+				var dir = [];
+
+				var vertical = a.y - b.y;
+				if (vertical > sens)
+					dir.push("bottom");
+				if (vertical < -sens)
+					dir.push("top");
+
+				var horizontal = a.x - b.x;
+				if (horizontal > sens)
+					dir.push("left");
+				if (horizontal < -sens)
+					dir.push("right");
+
+				return dir;
+			}
+
 		});
 	};
 })(jQuery);
