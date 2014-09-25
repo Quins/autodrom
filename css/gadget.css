@@ -139,9 +139,9 @@
 
 	.b-news-collection .b-news-article {
 
-		width: 294px;
+		width: 314px;
 		height: 340px;
-		margin: 0 10px;
+		padding: 0 10px;
 	}
 
 		.b-news-collection .b-news-article .b-news-article-picture {
@@ -807,6 +807,11 @@
 
 			height: auto;
 		}
+
+			.b-news-collection .b-news-article .b-news-article-picture .b-news-article-picture-entity {
+
+				height: auto;
+			}
 
 		.b-news-collection .b-news-article .b-news-article-title {
 

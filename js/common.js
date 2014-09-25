@@ -73,6 +73,9 @@ $(document).ready(function() {
     	}, 600);
     });
 
+    $("[data-reel]").swipes();
+    waterwheel.swipes();
+
     waterwheel.on("reload", function() {
 
 		waterwheel.reload({
@@ -82,6 +85,9 @@ $(document).ready(function() {
 			forcedImageHeight: ( parseInt(waterwheel.height() * 1.5) > waterwheel.width() ? parseInt(2 * waterwheel.width() / 3) : parseInt(waterwheel.height()) )
 		});
     });
+
+    waterwheel.on("qleftswipe", waterwheel.next);
+    waterwheel.on("qrightswipe", waterwheel.prev);
 
 	$("[data-reel]").reels({
 
@@ -97,12 +103,12 @@ $(document).ready(function() {
 			invisibleFrameClass: "g-hidden", 
 			disabledRollerClass: "b-partners-rotating-collection-disabled-roller"
 		}, 
-		"news-index": {
+		"news-route": {
 
-			offsetWidth: 368, 
-			visibleFrameClass: "b-news-visible-article", 
-			invisibleFrameClass: "g-hidden", 
-			disabledRollerClass: "b-news-rotating-collection-disabled-roller"
+			visibleFrameClass: "b-news-article", 
+			invisibleFrameClass: "b-news-invisible-article", 
+			disabledRollerClass: "b-news-rotating-collection-disabled-roller", 
+			currentPointClass: "b-news-collection-reel-guide-current-clause"
 		}
 	});
 
@@ -187,6 +193,11 @@ $(document).ready(function() {
 
     				"left": "280px"
     			}, 400);
+
+    			$(".l-header").animate({
+
+    				"left": "280px"
+    			}, 400);
     		}, 
     		hideAnimation: function(entity) {
 
@@ -204,25 +215,87 @@ $(document).ready(function() {
 
     				"left": 0
     			}, 400);
+
+    			$(".l-header").animate({
+
+    				"left": 0
+    			}, 400);
     		}
     	}
     });
 
-    $("[data-reel]").swipes();
-
-	$("[data-reel]").on("qleftswipe", function(event) {
-
-		event.preventDefault();
-		console.log("left swipe happened!");
-	});
-
-	$("[data-reel]").on("qrightswipe", function(event) {
-
-		event.preventDefault();
-		console.log("right swipe happened!");
-	});
+    afishainit();
 
 });
+
+/* Let's do some magic */
+	
+	function afishainit() {
+
+		var events = $(".afisha").find(".afisha__item");
+		var pages = Math.ceil(events.length / 4);
+		var page = { wrapper: false, before: false, after: false, allExceptFirstClass: false };
+		var last = 0;
+
+		if (events.length === 0)
+			return false;
+
+		if (pages > 1) {
+
+			page = {
+
+				wrapper: $("<section />", { class: "b-afisha-page" }),
+				before: false, 
+				after: $("<a />", { href: "#", class: "b-afisha-page-roller b-afisha-page-forward-roller" }), 
+				allExceptFirstClass: "g-hidden"
+			}
+		}
+
+		for (var i = 0; i < pages; i++) {
+			
+			var pageend = Math.min(i * 4 + 3, events.length);
+			var eslice = events.slice(last, pageend);
+
+			last = pageend;
+
+			if (page.wrapper) {
+
+				var wrapper = page.wrapper;
+				if (page.before)
+					wrapper.before(page.before);
+				if (page.after)
+					wrapper.after(page.after);
+				if (page.allExceptFirstClass)
+					wrapper.addClass(page.allExceptFirstClass);
+
+				eslice.wrapAll(wrapper);
+			}
+
+			if (eslice.length == 1) {
+
+				eslice.addClass("b-afisha-item-large");
+			} else if (eslice.length == 2) {
+
+				eslice.addClass("b-afisha-item-medium");
+				eslice.eq(0).addClass("b-afisha-item-left-medium");
+				eslice.eq(1).addClass("b-afisha-item-right-medium");
+			} else if (eslice.length == 3) {
+
+				eslice.eq(0).addClass("b-afisha-item-medium b-afisha-item-left-medium");
+				eslice.eq(1).addClass("b-afisha-item-top-right");
+				eslice.eq(2).addClass("b-afisha-item-bottom-right");
+			} else if (eslice.length == 4) {
+
+				eslice.eq(0).addClass("b-afisha-item-top-left");
+				eslice.eq(1).addClass("b-afisha-item-top-right");
+				eslice.eq(2).addClass("b-afisha-item-bottom-left");
+				eslice.eq(3).addClass("b-afisha-item-bottom-right");
+			}
+		};
+	}
+
+/* No magic after this sign, please */
+
 
 /* Counter */
 
@@ -316,6 +389,7 @@ $(document).ready(function() {
 				descriptor: ($(this).data("reel-descriptor") ? $(this).data("reel-descriptor") : ""), 
 				framesRepository: ($(this).find("[data-reel-frames-repository]") ? $(this).find("[data-reel-frames-repository]").first() : $(this)), 
 				frames: [],
+				$points: $(this).find("[data-reel-guide-point]"), 
 				currentFrameOffset: 0, 
 				forwardRollers: $(this).find("[data-reel-roller][data-reel-roller-descriptor='forward']"), 
 				backwardRollers: $(this).find("[data-reel-roller][data-reel-roller-descriptor='backward']")
@@ -326,7 +400,8 @@ $(document).ready(function() {
 			reel.properties = $.extend({
 				visibleFrameClass: "g-visible",
 				disabledRollerClass: "g-disabled", 
-				offsetWidth: reel.framesRepository.find("[data-reel-frame]").first().width()
+				offsetWidth: reel.framesRepository.find("[data-reel-frame]").first().width(),
+				currentPointClass: false
 			}, options[reel.descriptor]);
 
 			function calcOffset() {
@@ -348,8 +423,6 @@ $(document).ready(function() {
 				reel.maximumOffset = reel.framesRepository.width() - twidth;
 
 				reel.lastFrameOffset = i + 1;
-
-				console.log(reel.lastFrameOffset, reel.maximumOffset);
 			}
 
 			function init() {
@@ -366,6 +439,18 @@ $(document).ready(function() {
 			init();
 
 			$(this).on("reload", init);
+			$(this).on("qleftswipe", function() {
+
+				calcOffset();
+
+				if (reel.currentFrameOffset < reel.lastFrameOffset)
+					setOffset(reel.currentFrameOffset + 1);
+			});
+			$(this).on("qrightswipe", function() {
+
+				if (reel.currentFrameOffset > 0)
+					setOffset(reel.currentFrameOffset - 1);
+			});
 
 			reel.forwardRollers.each( function() {
 
@@ -405,6 +490,9 @@ $(document).ready(function() {
 					offsetWidth -= reel.frames[i].entity.outerWidth();
 				};
 
+				if (reel.$points.length > 0 && reel.properties.currentPointClass) 
+					reel.$points.removeClass(reel.properties.currentPointClass).eq(frame).addClass(reel.properties.currentPointClass);
+
 				if (offsetWidth < reel.maximumOffset)
 					offsetWidth = reel.maximumOffset;
 
@@ -429,22 +517,23 @@ $(document).ready(function() {
 
 		return this.each( function() {
 
-			var sensitivity = 10, 
+			var sensitivity = 20, 
 				start = {};
 
-			$this = $(this).addClass("g-selectproof");
+			var $this = $(this).addClass("g-selectproof");
 
 			$this.on("touchstart mousedown", function(event) {
-
-				console.log("touchstart");
 
 				start.x = event.originalEvent.pageX;
 				start.y = event.originalEvent.pageY;
 			});
 
-			$this.on("touchend mouseup", function(endevent) {
+			$this.on("dragstart", function(event) {
 
-				console.log("touchend");
+				event.preventDefault();
+			});
+
+			$this.on("touchend mouseup", function(endevent) {
 
 				var stop = {
 
@@ -477,9 +566,9 @@ $(document).ready(function() {
 
 				var vertical = a.y - b.y;
 				if (vertical > sens)
-					dir.push("bottom");
-				if (vertical < -sens)
 					dir.push("top");
+				if (vertical < -sens)
+					dir.push("bottom");
 
 				var horizontal = a.x - b.x;
 				if (horizontal > sens)

@@ -134,7 +134,6 @@ button::-moz-focus-inner {
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
-	-webkit-overflow-scrolling: touch;
 }
 
 	.l-outer .l-outer-section {
@@ -1100,13 +1099,24 @@ button::-moz-focus-inner {
 				background: transparent;
 			}
 
+	.b-news-collection .b-news-collection-section {}
+
+		.b-news-collection .b-news-collection-section .b-news-collection-section-inside {
+
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
 	.b-news-collection .b-news-article {
 
-		width: 368px;
-		margin: 0 15px;
+		width: 398px;
+		padding: 0 15px;
 		height: 370px;
 		display: inline-block;
 		vertical-align: top;
+		box-sizing: border-box;
+		white-space: normal;
+		text-indent: 0;
 	}
 
 		.b-news-collection .b-news-article .b-news-article-link {
@@ -1124,8 +1134,8 @@ button::-moz-focus-inner {
 			.b-news-collection .b-news-article .b-news-article-picture .b-news-article-picture-entity {
 
 				display: block;
-				height: 100%;
 				width: 100%;
+				height: 100%;
 				border-radius: 5px 5px 0 0;
 			}
 
@@ -1161,6 +1171,32 @@ button::-moz-focus-inner {
 			background: #fff;
 			border-radius: 0 0 5px 5px;
 		}
+
+		.b-news-collection .b-news-collection-reel-guide {
+
+			display: block;
+			text-align: center;
+			font-size: 0;
+			padding: 5px 17px;
+			line-height: 20px;
+		}
+
+			.b-news-collection .b-news-collection-reel-guide .b-news-collection-reel-guide-clause {
+
+				display: inline-block;
+				vertical-align: middle;
+				width: 12px;
+				height: 12px;
+				box-sizing: border-box;
+				border: 2px solid #fff;
+				background: transparent;
+				border-radius: 6px;
+				margin: 4px 9px;
+			}
+			.b-news-collection .b-news-collection-reel-guide .b-news-collection-reel-guide-current-clause {
+
+				background: #fff;
+			}
 
 .b-caption {
 
@@ -2773,7 +2809,7 @@ a.b-white-button:hover {
 	}
 
 
-/* Trash */ 
+/* HELL */ 
 
 .l-content {
 
@@ -3297,6 +3333,164 @@ a.b-white-button:hover {
 		text-transform: none;
 		font-weight: inherit;
 	}
+
+#ctl00_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField > p {
+
+	display: none;
+}
+
+.l-content .afisha {
+
+	margin: 11px 0 0;
+	font-size: 0;
+	line-height: 237px;
+}
+
+	.l-content .afisha__item {
+
+		padding: 0;
+		width: 50%;
+		height: 237px;
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
+	}
+	.l-content .afisha__item.b-afisha-item-large {
+
+		width: 100%;
+		height: 474px;
+		border-radius: 5px;
+	}
+	.l-content .afisha__item.b-afisha-item-medium {
+
+		width: 50%;
+		height: 474px;
+	}
+	.l-content .afisha__item.b-afisha-item-left-medium {
+
+		border-radius: 5px 0 0 5px;
+	}
+	.l-content .afisha__item.b-afisha-item-right-medium {
+
+		border-radius: 0 5px 5px 0;
+	}
+	.l-content .afisha__item.b-afisha-item-top-right {
+
+		border-radius: 0 5px 0 0;
+	}
+	.l-content .afisha__item.b-afisha-item-top-left {
+
+		border-radius: 5px 0 0 0;
+	}
+	.l-content .afisha__item.b-afisha-item-bottom-right {
+
+		border-radius: 0 0 5px 0;
+	}
+	.l-content .afisha__item.b-afisha-item-bottom-left {
+
+		border-radius: 0 0 0 5px;
+	}
+
+		.l-content .afisha .event {
+
+			border-radius: 0;
+		}
+
+			.l-content .afisha .event__title, 
+			.l-content .afisha .event._big .event__title {
+
+				bottom: 0;
+				left: 0;
+				right: 0;
+				font-size: 24px;
+				line-height: 25px;
+				border-radius: 0;
+				height: 70px;
+				padding: 10px 20px;
+				box-sizing: border-box;
+			}
+
+			.l-content .afisha .event__date, 
+			.l-content .afisha .event._big .event__date {
+
+				bottom: 70px;
+				top: auto;
+				left: 0;
+				right: auto;
+				height: 60px;
+				width: 180px;
+				padding: 15px 20px;
+				color: #000;
+				box-sizing: border-box;
+			}
+			.l-content .afisha .event._red-filter .event__date, 
+			.l-content .afisha .event._big._red-filter .event__date {
+
+				background: rgba(214,11,5,.95);
+				color: #fff;
+			}
+
+				.l-content .afisha ._red-filter .event__date:after {
+
+					border-color: rgba(214,11,5,.95) transparent transparent rgba(214,11,5,.95);
+				}
+
+				.l-content .afisha .event__day, 
+				.l-content .afisha .event._big .event__day {
+
+					display: block;
+					height: 30px;
+					width: 50px;
+					float: left;
+					font-size: 35px;
+					line-height: 31px;
+					margin: 0;
+					color: inherit;
+				}
+
+				.l-content .afisha .event__year, 
+				.l-content .afisha .event._big .event__year {
+
+					display: block;
+					margin: 0 0 4px 60px;
+					width: auto;
+					height: 12px;
+					line-height: 12px;
+					font-size: 12px;
+					color: inherit;
+				}
+
+				.l-content .afisha .event__time, 
+				.l-content .afisha .event._big .event__time {
+
+					display: block;
+					margin: 0 0 0 60px;
+					width: auto;
+					height: 12px;
+					line-height: 12px;
+					font-size: 12px;
+					color: inherit;
+				}
+
+#aspnetForm {
+
+	height: 100%;
+}
+
+#s4-workspace {
+
+	height: 100% !important;
+	width: auto !important;
+}
+
+#s4-bodyContainer {
+
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Animation */
 
 @keyframes largesearchfloatup {
 	
