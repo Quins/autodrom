@@ -109,6 +109,20 @@ $(document).ready(function() {
 			invisibleFrameClass: "b-news-invisible-article", 
 			disabledRollerClass: "b-news-rotating-collection-disabled-roller", 
 			currentPointClass: "b-news-collection-reel-guide-current-clause"
+		}, 
+		"news-video": {
+
+			visibleFrameClass: "b-news-article", 
+			invisibleFrameClass: "b-news-invisible-article", 
+			disabledRollerClass: "b-news-rotating-collection-disabled-roller", 
+			currentPointClass: "b-news-collection-reel-guide-current-clause"
+		}, 
+		"news-sport": {
+
+			visibleFrameClass: "b-news-article", 
+			invisibleFrameClass: "b-news-invisible-article", 
+			disabledRollerClass: "b-news-rotating-collection-disabled-roller", 
+			currentPointClass: "b-news-collection-reel-guide-current-clause"
 		}
 	});
 
@@ -189,7 +203,7 @@ $(document).ready(function() {
     				"left": 0
     			}, 400);
 
-    			$(".b-navigation-toggle").animate({
+    			/*$(".b-navigation-toggle").animate({
 
     				"left": "280px"
     			}, 400);
@@ -197,7 +211,7 @@ $(document).ready(function() {
     			$(".l-header").animate({
 
     				"left": "280px"
-    			}, 400);
+    			}, 400);*/
     		}, 
     		hideAnimation: function(entity) {
 
@@ -211,7 +225,7 @@ $(document).ready(function() {
     				"left": "-280px"
     			}, 400);
 
-    			$(".b-navigation-toggle").animate({
+    			/*$(".b-navigation-toggle").animate({
 
     				"left": 0
     			}, 400);
@@ -219,12 +233,25 @@ $(document).ready(function() {
     			$(".l-header").animate({
 
     				"left": 0
-    			}, 400);
+    			}, 400);*/
     		}
     	}
     });
 
     afishainit();
+    $(".b-general-scrolltop-button").click( function(e) {
+
+    	e.preventDefault();
+    	$("#s4-bodyContainer").animate({
+
+    		scrollTop: 0
+    	}, 800);
+    });
+
+    if ($("#s4-ribbonrow").html().length > 0) {
+
+    	$(".l-header").css("position", "absolute");
+    }
 
 });
 
@@ -435,6 +462,14 @@ $(document).ready(function() {
 						visible: false
 					}
 				});
+
+				reel.$points = $(this).find("[data-reel-guide-point]");
+
+				if (reel.$points.length > 0 && reel.properties.currentPointClass) {
+
+					if (reel.$points.is("." + reel.properties.currentPointClass).length === 0)
+						reel.$points.first().addClass(reel.properties.currentPointClass);
+				}
 			}
 			init();
 
@@ -518,19 +553,45 @@ $(document).ready(function() {
 		return this.each( function() {
 
 			var sensitivity = 20, 
-				start = {};
+				start = {}, 
+				blockLinks = false;
 
 			var $this = $(this).addClass("g-selectproof");
+			var $links = $(this).find("a");
 
 			$this.on("touchstart mousedown", function(event) {
 
 				start.x = event.originalEvent.pageX;
 				start.y = event.originalEvent.pageY;
+
+				blockLinks = false;
 			});
 
 			$this.on("dragstart", function(event) {
 
 				event.preventDefault();
+			});
+
+			$this.on("touchmove mousemove", function(event) {
+
+				if(!blockLinks) {
+
+					var cur = {
+						x: event.originalEvent.pageX, 
+						y: event.originalEvent.pageY
+					}
+
+					if (d(start, cur) > sensitivity) {
+
+						blockLinks = true;
+					}
+				}
+			});
+
+			$links.on("touchend mouseup", function(linkevent) {
+
+				if (blockLinks)
+					linkevent.preventDefault();
 			});
 
 			$this.on("touchend mouseup", function(endevent) {

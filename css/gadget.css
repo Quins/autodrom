@@ -503,9 +503,36 @@
 	margin-left: 0;
 }
 
+.l-content a.b-general-scrolltop-button, 
+.b-general-scrolltop-button {
+
+	margin-left: 530px;
+	font-size: 0;
+	width: 54px;
+}
+
+}
+
+@media (max-width: 1180px) {
+
+	.l-content a.b-general-scrolltop-button, 
+	.b-general-scrolltop-button {
+		
+		display: none;
+	}
 }
 
 @media (max-width: 991px) {
+
+.b-general-scrolltop-button {
+
+	display: none;
+}
+
+.l-outer .l-outer-primary-section {
+
+	position: relative;
+}
 
 .l-header {
 
@@ -513,6 +540,7 @@
 	line-height: 50px;
 	box-shadow: 0 0 5px rgba(0,0,0,.3);
 	overflow: hidden;
+	position: absolute;
 }
 
 	.l-header:before {
@@ -533,10 +561,15 @@
 	overflow: hidden;
 }
 
-.l-footer .l-footer-inside {
+.l-footer {
 
-	padding: 40px 17px;
+	position: static;
 }
+
+	.l-footer .l-footer-inside {
+
+		padding: 40px 17px;
+	}
 
 .b-logo {
 
@@ -926,7 +959,7 @@
 
 	.b-navigation-toggle {
 
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 60px;
@@ -1753,6 +1786,21 @@
 	}
 
 }
+
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) and (max-width: 991px) {
+
+	.b-logo .b-logo-link:before, 
+	.b-navigation-toggle:before, 
+	.b-navigation .b-navigation-section .b-navigation-section-toggle:before {
+
+		background-image: url(../i/graphics@2x.png);
+		background-size: 500px 500px;
+	}
+
+}
+
+
+
 
 @keyframes searchfloatup {
 	
