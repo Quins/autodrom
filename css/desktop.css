@@ -161,7 +161,7 @@ button::-moz-focus-inner {
 	background: #d60a05;
 	position: fixed;
 	top: 0;
-	z-index: 100;
+	z-index: 2100;
 	color: #fff;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
 	box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -378,7 +378,7 @@ button::-moz-focus-inner {
 			-moz-box-sizing: content-box;
 			-webkit-box-sizing: content-box;
 			box-sizing: content-box;
-			z-index: 100;
+			z-index: 2100;
 			top: 88px;
 			left: 50%;
 			height: 290px;
@@ -461,7 +461,6 @@ button::-moz-focus-inner {
 	font-size: 16px;
 	line-height: 20px;
 	padding: 20px 0 10px 0;
-	margin-right: -4px;
 }
 
 .b-language-menu {
@@ -737,13 +736,24 @@ button::-moz-focus-inner {
 
 	font-size: 0;
 	padding: 80px 0 0;
+	text-align: justify;
 }
+
+	.b-navigation:after {
+
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+	}
 
 	.b-navigation .b-navigation-section {
 
 		display: inline-block;
 		vertical-align: top;
 		padding-right: 45px;
+		text-align: left;
 	}
 	.b-navigation .b-navigation-section:last-of-type {
 
@@ -1034,7 +1044,6 @@ button::-moz-focus-inner {
 
 	display: block;
 	float: right;
-	margin-right: 20px;
 }
 
 	.b-phone-section .b-phone-section-title {
@@ -1550,7 +1559,7 @@ a.b-white-button:hover {
 .b-pictures-collection {
 
 	margin: 0 58px 50px;
-	border: 2px solid #fff;
+	border: 2px solid rgba(255,255,255,.7);
 	border-radius: 5px;
 	position: relative;
 }
@@ -3400,14 +3409,9 @@ a.b-white-button:hover {
 		font-weight: inherit;
 	}
 
-#ctl00_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField > p {
-
-	display: none;
-}
-
 .l-content .afisha {
 
-	margin: 11px 0 0;
+	margin: 0;
 	font-size: 0;
 	line-height: 237px;
 }
