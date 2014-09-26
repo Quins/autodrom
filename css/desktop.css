@@ -3160,6 +3160,16 @@ a.b-white-button:hover {
 		text-align: left;
 	}
 
+.l-content .article__header {
+
+	margin-left: 0;
+}
+
+.l-content .article._event .article__date {
+
+	width: 200px;
+}
+
 .l-content #DeltaPlaceHolderMain .page__content {
 
 	margin: 0 auto;
