@@ -397,70 +397,75 @@
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#freezone {
 
-			width: 126px;
-			height: 97px;
-			top: 235px;
-			left: 43px;
+			width: 118px;
+			height: 91px;
+			top: 219px;
+			left: 40px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t6 {
 
-			width: 65px;
-			height: 45px;
-			top: 348px;
-			left: 52px;
+			width: 60px;
+			height: 41px;
+			top: 325px;
+			left: 49px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t5 {
 
-			width: 30px;
-			height: 41px;
-			top: 275px;
-			left: 188px;
+			width: 28px;
+			height: 38px;
+			top: 257px;
+			left: 176px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t4 {
 
-			width: 108px;
-			height: 34px;
-			top: 159px;
-			left: 174px;
+			width: 101px;
+			height: 30px;
+			top: 150px;
+			left: 162px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t2 {
 
-			width: 79px;
-			height: 32px;
-			top: 244px;
-			left: 284px;
+			width: 73px;
+			height: 29px;
+			top: 228px;
+			left: 265px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t1 {
 
-			width: 58px;
-			height: 38px;
-			top: 195px;
-			left: 503px;
+			width: 54px;
+			height: 34px;
+			top: 183px;
+			left: 468px;
 			border-radius: 38px 0 38px 0;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#main {
 
-			width: 82px;
-			height: 102px;
-			top: 86px;
-			left: 563px;
+			width: 76px;
+			height: 94px;
+			top: 82px;
+			left: 524px;
 			border-radius: 102px 0 102px 0;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#paddock {
 
-			width: 46px;
-			height: 60px;
-			top: 89px;
-			left: 566px;
-			border-radius: 60px 0 60px 0;
+			width: 42px;
+			height: 55px;
+			top: 84px;
+			left: 527px;
+			border-radius: 90px 0 90px 0;
 			z-index: 1;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#freezone:hover .b-scheme-tooltips-collection-clause-title {
+
+			bottom: 90px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t1:hover .b-scheme-tooltips-collection-clause-title {
@@ -473,6 +478,16 @@
 
 			bottom: -65px;
 			right: -50px;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t5:hover .b-scheme-tooltips-collection-clause-title {
+
+			bottom: -75px;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t4:hover .b-scheme-tooltips-collection-clause-title {
+
+			bottom: 35px;
 		}
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#t6:hover .b-scheme-tooltips-collection-clause-title {
@@ -489,7 +504,7 @@
 
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#paddock:hover .b-scheme-tooltips-collection-clause-title {
 
-			bottom: 70px;
+			bottom: 60px;
 			right: -100px;
 		}
 
