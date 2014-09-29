@@ -31,7 +31,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$("[data-counter]").counter("13/10/2014 11:00 GMT");
+	$("[data-counter]").counter("12/10/2014 15:00 GMT");
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
@@ -368,7 +368,7 @@ $(document).ready(function() {
 				var now = new Date();
 				var target = new Date(targettime.year, targettime.month, targettime.day, targettime.hour, targettime.minute);
 
-				var difference = target.getTime() - now.getTime();
+				var difference = target.getTime() - now.getTime() + now.getTimezoneOffset() * 60000;
 				difference = new Date(difference);
 
 				var tmparray = ( '00' + parseInt(difference.getTime() / 86400000) ).slice(-3).toString().split("");

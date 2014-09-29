@@ -520,7 +520,7 @@ button::-moz-focus-inner {
 	height: 20px;
 	padding: 0 0 0 15px;
 	border-left: 1px solid #fff;
-	margin-left: 5px;
+	margin-left: 12px;
 }
 
 	.b-secondary-menu .b-secondary-menu-clause {
@@ -1236,7 +1236,7 @@ button::-moz-focus-inner {
 		font-size: 18px;
 		line-height: 20px;
 		float: right;
-		margin-right: 245px;
+		margin-right: 252px;
 		white-space: nowrap;
 		color: #fff;
 	}
@@ -3305,6 +3305,7 @@ a.b-white-button:hover {
 			line-height: 26px;
 		}
 
+	.l-content input.button, 
 	.l-content .button {
 
 		font-size: 14px;
@@ -3569,6 +3570,34 @@ a.b-white-button:hover {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
+
+.l-content .form-container__desc {
+
+	float: none;
+	width: auto;
+}
+
+.l-content .form-container__form {
+
+	margin: 0;
+	width: auto;
+	float: none;
+}
+
+	.l-content .form__col {
+
+		width: 50%;
+		margin: 0;
+	}
+	.l-content .form__col:nth-child(odd) {
+
+		padding-right: 20px;
+	}
+
+	.l-content .button._width-1 {
+
+		width: auto;
+	}
 
 /* Animation */
 
