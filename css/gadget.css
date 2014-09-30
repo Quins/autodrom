@@ -1908,3 +1908,17 @@
 		margin-top: 50px;
 	}
 }
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+
+.l-header {
+
+	position: relative;
+}
+
+.l-content {
+
+	margin-top: 0;
+}
+
+}
