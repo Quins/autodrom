@@ -468,6 +468,23 @@
 			z-index: 1;
 		}
 
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-round {
+
+			width: 94px;
+			height: 94px;
+			top: 170px;
+			left: 165px;
+			border-radius: 47px;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-right {
+
+			width: 108px;
+			height: 110px;
+			top: 98px;
+			left: 544px;
+		}
+
 		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#freezone:hover .b-scheme-tooltips-collection-clause-title {
 
 			bottom: 90px;
@@ -517,6 +534,18 @@
 
 				right: 114px;
 			}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-round:hover .b-scheme-tooltips-collection-clause-title {
+
+			bottom: 80px;
+			right: -30px;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-right:hover .b-scheme-tooltips-collection-clause-title {
+
+			bottom: -45px;
+			right: -20px;
+		}
 
 .l-content .article__header {
 

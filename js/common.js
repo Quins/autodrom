@@ -166,6 +166,9 @@ $(document).ready(function() {
 		"scheme-paddock": {
 			toggleOnOutsideClick: true
 		},
+		"scheme-village": {
+			toggleOnOutsideClick: true
+		},
 		"searchbox": {}, 
 		"loges-platinum": {
 			toggleOnOutsideClick: true

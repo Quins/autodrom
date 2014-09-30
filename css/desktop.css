@@ -431,7 +431,7 @@ button::-moz-focus-inner {
 					left: 0;
 					right: 0;
 					bottom: 0;
-					background: rgba(8, 38, 57, 0.5);
+					/*background: rgba(8, 38, 57, 0.5);*/
 				} 
 
 				.b-primary-menu .b-primary-menu-clause .b-primary-sub-menu .b-primary-sub-menu-picture-clause .b-primary-sub-menu-picture-clause-entity {
@@ -2073,6 +2073,26 @@ a.b-white-button:hover {
 			z-index: 1;
 		}
 
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-round {
+
+			width: 134px;
+			height: 134px;
+			top: 240px;
+			left: 232px;
+			border-radius: 67px;
+			z-index: 1;
+		}
+
+		.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-right {
+
+			width: 154px;
+			height: 170px;
+			top: 128px;
+			left: 765px;
+			border-radius: 374px 0 374px 0;
+			z-index: 1;
+		}
+
 			.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause .b-scheme-tooltips-collection-clause-title {
 
 				display: none;
@@ -2147,6 +2167,16 @@ a.b-white-button:hover {
 				bottom: 75px;
 				right: -50px;
 			}
+			.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-round:hover .b-scheme-tooltips-collection-clause-title {
+
+				bottom: 105px;
+				right: -30px;
+			}
+			.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-right:hover .b-scheme-tooltips-collection-clause-title {
+
+				bottom: -35px;
+				right: -10px;
+			}
 
 				.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#freezone:hover .b-scheme-tooltips-collection-clause-title:before {
 
@@ -2195,6 +2225,18 @@ a.b-white-button:hover {
 					border-color: #fff transparent transparent;
 					bottom: -10px;
 					right: 54px;
+				}
+				.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-round:hover .b-scheme-tooltips-collection-clause-title:before {
+
+					border-color: #fff transparent transparent;
+					bottom: -10px;
+					right: 54px;
+				}
+				.b-scheme-tooltips-collection .b-scheme-tooltips-collection-clause#village-right:hover .b-scheme-tooltips-collection-clause-title:before {
+
+					border-color: transparent transparent #fff;
+					top: -10px;
+					right: 84px;
 				}
 
 	.b-scheme-section .b-scheme-popups-collection {
@@ -2297,11 +2339,6 @@ a.b-white-button:hover {
 					display: inline-block;
 					color: #d60b05;
 				}
-
-		.b-scheme-section .b-scheme-popups-collection .b-scheme-paddock-popup {
-
-			display: none;
-		}
 
 .b-loges-article {}
 
@@ -2852,7 +2889,6 @@ a.b-white-button:hover {
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
-	opacity: .6;
 	z-index: 1;
 }
 .b-general-scrolltop-button:hover {
@@ -3598,6 +3634,17 @@ a.b-white-button:hover {
 
 		width: auto;
 	}
+
+#s4-ribbonrow #globalNavBox {
+
+	height: auto;
+}
+
+#s4-ribbonrow #Ribbon .ms-cui-tabContainer {
+
+	position: relative;
+	top: auto;
+}
 
 /* Animation */
 
