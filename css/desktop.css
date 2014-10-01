@@ -161,7 +161,7 @@ button::-moz-focus-inner {
 	background: #d60a05;
 	position: fixed;
 	top: 0;
-	z-index: 2100;
+	z-index: 510;
 	color: #fff;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
 	box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -378,7 +378,7 @@ button::-moz-focus-inner {
 			-moz-box-sizing: content-box;
 			-webkit-box-sizing: content-box;
 			box-sizing: content-box;
-			z-index: 2100;
+			z-index: 510;
 			top: 88px;
 			left: 50%;
 			height: 290px;
