@@ -339,7 +339,7 @@ button::-moz-focus-inner {
 
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 108px;
+	margin: 0 0 0 108px;
 }
 
 	.b-primary-menu .b-primary-menu-clause {
@@ -520,7 +520,7 @@ button::-moz-focus-inner {
 	height: 20px;
 	padding: 0 0 0 15px;
 	border-left: 1px solid #fff;
-	margin-left: 14px;
+	margin: 0 0 0 14px;
 }
 
 	.b-secondary-menu .b-secondary-menu-clause {
