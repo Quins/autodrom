@@ -1417,6 +1417,12 @@
 	padding: 0 17px 20px;
 }
 
+.fancybox-overlay, 
+.fancybox-wrap {
+
+	display: none !important;
+}
+
 }
 
 @media (max-width: 860px) {
