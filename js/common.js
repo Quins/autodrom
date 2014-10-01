@@ -567,9 +567,10 @@ $(document).ready(function() {
 
 		return this.each( function() {
 
-			var sensitivity = 20, 
+			var sensitivity = 80, 
 				start = {}, 
-				blockLinks = false;
+				blockLinks = false, 
+				blockScroll = false;
 
 			var $this = $(this).addClass("g-selectproof");
 			var $links = $(this).find("a");
@@ -580,6 +581,7 @@ $(document).ready(function() {
 				start.y = event.originalEvent.pageY;
 
 				blockLinks = false;
+				blockScroll = false;
 			});
 
 			$this.on("dragstart", function(event) {
@@ -600,6 +602,21 @@ $(document).ready(function() {
 
 						blockLinks = true;
 					}
+				}
+				if (!blockScroll) {
+
+					var cur = {
+						x: event.originalEvent.pageX, 
+						y: event.originalEvent.pageY
+					}
+
+					if (dx(start, cur) > sensitivity) {
+
+						blockScroll = true;
+					}
+				} else {
+
+					event.preventDefault();
 				}
 			});
 
@@ -634,6 +651,11 @@ $(document).ready(function() {
 			function d(a, b) {
 
 				return Math.sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
+			}
+
+			function dx(a, b) {
+
+				return Math.abs(b.x - a.x);
 			}
 
 			function direction(a, b, sens) {
