@@ -3608,6 +3608,13 @@ a.b-white-button:hover {
 	-webkit-overflow-scrolling: touch;
 }
 
+#snippet_searchpanel {
+
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
 .l-content .form-container__desc {
 
 	float: none;
