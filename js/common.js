@@ -245,6 +245,8 @@ $(document).ready(function() {
     	}
     });
 
+    $("[data-select]").selects();
+
     afishainit();
     $(".b-general-scrolltop-button").click( function(e) {
 
@@ -255,18 +257,18 @@ $(document).ready(function() {
     	}, 800);
     });
 
-    if ($("#s4-ribbonrow").html().length > 0) {
+    if ($("#s4-ribbonrow").length && $("#s4-ribbonrow").html().length > 0) {
 
     	$(".l-header").css("position", "absolute");
     }
 
     function fancyboxinit() {
 
-    	waterwheel.find(".b-pictures-article").attr("rel", "mainpage-gallery").each( function(i,e) {
+/*		waterwheel.find(".b-pictures-article").attr("rel", "mainpage-gallery").each( function(i,e) {
 
-    		$(this).attr("href", $(this).children(".b-pictures-article-entity").first().attr("src"));
-    	}).fancybox();
-    }
+			$(this).attr("href", $(this).children(".b-pictures-article-entity").first().attr("src"));
+		}).fancybox();
+*/    }
 
 });
 
@@ -338,6 +340,34 @@ $(document).ready(function() {
 
 /* No magic after this sign, please */
 
+
+/* Selects */
+
+(function( $ ) {
+	$.fn.selects = function(options) {
+
+		if (!options)
+			var options = {};
+
+		return this.each( function() {
+
+			var select = {
+				descriptor: ($(this).data("select-descriptor") ? $(this).data("select-descriptor") : ""), 
+				entity: $(this).find("[data-select-entity]"), 
+				label: $(this).find("[data-select-label]")
+			};
+
+			select.properties = $.extend({}, 
+				(select.descriptor in options ? options[select.descriptor] : {})
+			);
+
+			select.entity.change( function(event) {
+
+				select.label.text( select.entity.find("option:selected").text() );
+			});
+		});
+	};
+})(jQuery);
 
 /* Counter */
 

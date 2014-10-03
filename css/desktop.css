@@ -2916,6 +2916,170 @@ a.b-white-button:hover {
 	}
 }
 
+.b-form {
+
+	display: block;
+}
+
+	.b-form .b-form-title {
+
+		display: block;
+		padding: 10px 0;
+		font-family: "EuropeDemi", sans-serif;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.b-form .b-form-fieldset {
+
+		display: block;
+		padding: 0 0 10px;
+	}
+
+		.b-form .b-form-fieldset .b-form-fieldset-description {
+
+			display: block;
+			font-family: "EuropeDemi", sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 30px;
+			text-transform: uppercase;
+		}
+
+			.b-form .b-form-required-fieldset .b-form-fieldset-description:after {
+
+				content: "*";
+				color: #D31713;
+				font-size: 21px;
+				display: inline-block;
+				line-height: 10px;
+			}
+
+		.b-form .b-form-fieldset .b-form-fieldset-text-input {
+
+			display: block;
+			border: 2px solid rgb(101, 124, 147);
+			border-radius: 4px;
+			font-family: "Europe", sans-serif;
+			font-size: 14px;
+			line-height: 16px;
+			padding: 10px;
+			margin: 0;
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.b-form .b-form-fieldset .b-form-fieldset-select-input {
+
+			display: block;
+			position: relative;
+		}
+
+			.b-form .b-form-fieldset .b-form-fieldset-select-input-label {
+
+				display: block;
+				border: 2px solid rgb(101, 124, 147);
+				border-radius: 4px;
+				font-family: "EuropeDemi", sans-serif;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 16px;
+				padding: 10px;
+				margin: 0;
+				box-sizing: border-box;
+				width: 100%;
+			}
+
+				.b-form .b-form-fieldset .b-form-fieldset-select-input-label:after {
+
+					content: "";
+					display: block;
+					position: absolute;
+					width: 14px;
+					height: 8px;
+					top: 50%;
+					right: 15px;
+					margin-top: -4px;
+					background: url(../i/graphics.png) no-repeat -205px -235px;
+				}
+
+			.b-form .b-form-fieldset .b-form-fieldset-select-input-options-collection {
+
+				position: absolute;
+				display: block;
+				width: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border-radius: 0px;
+				opacity: 0;
+			}
+
+		.b-form .b-form-fieldset .b-form-fieldset-error {
+
+			display: none;
+		}
+
+		.b-form .b-form-fieldset .b-form-fieldset-checkbox-input {
+
+			display: none;
+		}
+		.b-form .b-form-fieldset .b-form-fieldset-checkbox-input + .b-form-fieldset-description {
+			
+			font-family: "Europe", sans-serif;
+			font-weight: normal;
+			text-transform: none;
+		}
+			.b-form .b-form-fieldset .b-form-fieldset-checkbox-input + .b-form-fieldset-description:before {
+
+				content: "";
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				margin-bottom: -5px;
+				background: url(../i/graphics.png) no-repeat -230px -235px;
+			}
+			.b-form .b-form-fieldset .b-form-fieldset-checkbox-input:checked + .b-form-fieldset-description:before {
+
+				background-position: -260px -235px;
+			}
+
+	.b-form .b-form-empty-fieldset {}
+
+		.b-form .b-form-empty-fieldset .b-form-fieldset-text-input {
+
+			border-color: #D31713;
+		}
+
+		.b-form .b-form-empty-fieldset .b-form-fieldset-empty-error {
+
+			display: block;
+			padding: 5px 0;
+			font-size: 12px;
+			line-height: 15px;
+			color: #D31713;
+		}
+
+	.b-form .b-form-fillerror-fieldset {}
+
+		.b-form .b-form-fillerror-fieldset .b-form-fieldset-text-input {
+
+			border-color: #D31713;
+		}
+
+		.b-form .b-form-fillerror-fieldset .b-form-fieldset-fill-error {
+
+			display: block;
+			padding: 5px 0;
+			font-size: 12px;
+			line-height: 15px;
+			color: #D31713;
+		}
+
+
 /* HELL */ 
 
 .l-content {
