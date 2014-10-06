@@ -3017,7 +3017,33 @@ a.b-white-button:hover {
 				opacity: 0;
 			}
 
+		.b-form .b-form-fieldset .b-form-fieldset-submit-input {
+
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			background: #D31713;
+			color: #fff;
+			border: none;
+			padding: 12px 13px 14px;
+			letter-spacing: 1px;
+			font-family: "EuropeDemi", sans-serif;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 26px;
+			margin: 0;
+			border-radius: 5px;
+		}
+
 		.b-form .b-form-fieldset .b-form-fieldset-error {
+
+			display: block;
+			padding: 5px 0;
+			font-size: 12px;
+			line-height: 15px;
+			color: #D31713;
+		}
+		.b-form .b-form-fieldset .b-form-fieldset-error:empty {
 
 			display: none;
 		}
@@ -3047,37 +3073,10 @@ a.b-white-button:hover {
 				background-position: -260px -235px;
 			}
 
-	.b-form .b-form-empty-fieldset {}
+	.b-form .b-form-submit-fieldset {
 
-		.b-form .b-form-empty-fieldset .b-form-fieldset-text-input {
-
-			border-color: #D31713;
-		}
-
-		.b-form .b-form-empty-fieldset .b-form-fieldset-empty-error {
-
-			display: block;
-			padding: 5px 0;
-			font-size: 12px;
-			line-height: 15px;
-			color: #D31713;
-		}
-
-	.b-form .b-form-fillerror-fieldset {}
-
-		.b-form .b-form-fillerror-fieldset .b-form-fieldset-text-input {
-
-			border-color: #D31713;
-		}
-
-		.b-form .b-form-fillerror-fieldset .b-form-fieldset-fill-error {
-
-			display: block;
-			padding: 5px 0;
-			font-size: 12px;
-			line-height: 15px;
-			color: #D31713;
-		}
+		padding: 10px 0 0;
+	}
 
 
 /* HELL */ 
