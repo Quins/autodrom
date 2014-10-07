@@ -2917,12 +2917,12 @@ a.b-white-button:hover {
 	}
 }
 
-.b-form {
+.l-content .b-form {
 
 	display: block;
 }
 
-	.b-form .b-form-title {
+	.l-content .b-form .b-form-title {
 
 		display: block;
 		padding: 10px 0;
@@ -2930,10 +2930,14 @@ a.b-white-button:hover {
 		font-weight: bold;
 		font-size: 20px;
 		line-height: 30px;
+		color: #000;
+		margin: 0;
 	}
 
-	.b-form .b-form-fieldset {
+	.l-content .b-form .b-form-fieldset {
 
+		border: none;
+		margin: 0;
 		display: block;
 		padding: 0 0 10px;
 	}
