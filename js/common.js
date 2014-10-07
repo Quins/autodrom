@@ -277,7 +277,8 @@ $(document).ready(function() {
 	function afishainit() {
 
 		var events = $(".afisha").find(".afisha__item");
-		var pages = Math.ceil(events.length / 4);
+		var pages = Math.ceil((events.length + 1) / 4);
+		console.log(pages);
 		var page = { wrapper: false, before: false, after: false, allExceptFirstClass: false };
 		var last = 0;
 
@@ -297,7 +298,7 @@ $(document).ready(function() {
 
 		for (var i = 0; i < pages; i++) {
 			
-			var pageend = Math.min(i * 4 + 3, events.length);
+			var pageend = Math.min((i + 1) * 4, events.length);
 			var eslice = events.slice(last, pageend);
 
 			last = pageend;
@@ -309,7 +310,7 @@ $(document).ready(function() {
 					wrapper.before(page.before);
 				if (page.after)
 					wrapper.after(page.after);
-				if (page.allExceptFirstClass)
+				if (page.allExceptFirstClass && i > 0)
 					wrapper.addClass(page.allExceptFirstClass);
 
 				eslice.wrapAll(wrapper);

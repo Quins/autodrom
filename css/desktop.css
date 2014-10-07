@@ -1705,6 +1705,7 @@ a.b-white-button:hover {
 			.b-partners-collection .b-partners-article .b-partners-article-picture .b-partners-article-picture-entity {
 
 				display: inline-block;
+				vertical-align: middle;
 				max-width: 100%;
 				max-height: 100%;
 			}
@@ -3374,6 +3375,7 @@ a.b-white-button:hover {
 	margin: 0 auto;
 	padding: 60px 352px 60px 350px;
 	max-width: 1366px;
+	min-height: 800px;
 	box-sizing: border-box;
 }
 .l-content #DeltaPlaceHolderMain .page__content._no-right-indent {
@@ -3626,6 +3628,7 @@ a.b-white-button:hover {
 	line-height: 237px;
 }
 
+	.l-content .b-afisha-page .afisha__item, 
 	.l-content .afisha__item {
 
 		padding: 0;
