@@ -3587,6 +3587,11 @@ a.b-white-button:hover {
 		border-bottom-color: transparent;
 	}
 
+.l-content .ms-WPBorder {
+
+	border: none;
+}
+
 .l-content .ms-rteElement-H2B + ul {
 
 	text-align: left;
