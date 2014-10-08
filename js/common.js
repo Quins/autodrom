@@ -31,7 +31,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$("[data-counter]").counter("12/10/2014 16:00 UTC");
+	$("[data-counter]").counter("12/10/2014 11:00 UTC");
 
 	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
@@ -414,31 +414,30 @@ $(document).ready(function() {
 				var now = new Date();
 				var target = new Date(targettime.year, targettime.month, targettime.day, targettime.hour, targettime.minute);
 
-				var difference = 60 * 60 * 1000 + target.getTime() - now.getTime() + now.getTimezoneOffset() * 60000;
-				difference = new Date(difference);
+				var difference = target.getTime() - now.getTime() - target.getTimezoneOffset() * 60 * 1000;
 
-				var tmparray = ( '00' + parseInt(difference.getTime() / 86400000) ).slice(-3).toString().split("");
+				var tmparray = ( '00' + Math.floor(difference / 86400000) ).slice(-3).toString().split("");
 				days.entity.empty();
 				$.each(tmparray, function(i, e) {
 
 					days.entity.append($("<span />", { class: days.letterClass, text: e }));
 				});
 
-				var tmparray = ('0' + difference.getHours()).slice(-2).split("");
+				var tmparray = ('0' + (Math.floor(difference / 3600000) % 24)).slice(-2).split("");
 				hours.entity.empty();
 				$.each(tmparray, function(i, e) {
 
 					hours.entity.append($("<span />", { class: hours.letterClass, text: e }));
 				});
 
-				var tmparray = ('0' + difference.getMinutes()).slice(-2).split("");
+				var tmparray = ('0' + (Math.floor(difference / 60000) % 60)).slice(-2).split("");
 				minutes.entity.empty();
 				$.each(tmparray, function(i, e) {
 
 					minutes.entity.append($("<span />", { class: minutes.letterClass, text: e }));
 				});
 
-				var tmparray = ('0' + difference.getSeconds()).slice(-2).toString().split("");
+				var tmparray = ('0' + (Math.floor(difference / 1000) % 60)).slice(-2).toString().split("");
 				seconds.entity.empty();
 				$.each(tmparray, function(i, e) {
 
