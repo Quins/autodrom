@@ -381,12 +381,13 @@ button::-moz-focus-inner {
 			z-index: 510;
 			top: 88px;
 			left: 50%;
-			height: 290px;
+			min-height: 290px;
 			width: 1366px;
 			border-left: 800px solid rgba(0,0,0,0);
 			border-right: 800px solid rgba(0,0,0,0);
 			margin-left: -1483px;
 			padding: 20px 0;
+			margin: 0;
 			background: rgba(0,0,0,.8);
 		}
 
