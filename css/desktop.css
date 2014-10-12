@@ -1470,7 +1470,7 @@ button::-moz-focus-inner {
 .b-promos-one-picture-collection {
 
 	height: auto;
-	padding: 55px 45px 30px;
+	padding: 0;
 }
 
 	.b-promos-one-picture-collection .b-promos-article {

@@ -128,6 +128,11 @@
 		width: 450px;
 	}
 
+.b-promos-one-picture-collection {
+
+	padding: 0;
+}
+
 	.b-promos-one-picture-collection .b-promos-article {
 
 		width: auto;
@@ -826,7 +831,7 @@
 
 .b-promos-one-picture-collection {
 
-	padding-bottom: 14px;
+	padding: 0;
 }
 
 	.b-promos-collection .b-promos-collection-counter {
