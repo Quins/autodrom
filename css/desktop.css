@@ -1467,6 +1467,24 @@ button::-moz-focus-inner {
 		float: right;
 	}
 
+.b-promos-one-picture-collection {
+
+	height: auto;
+	padding: 55px 45px 30px;
+}
+
+	.b-promos-one-picture-collection .b-promos-article {
+
+		float: none;
+		display: block;
+	}
+
+		.b-promos-one-picture-collection .b-promos-article .b-promos-article-picture-entity {
+
+			display: block;
+			width: 100%;
+		}
+
 .b-button, 
 a.b-button, 
 a.b-button:visited, 
