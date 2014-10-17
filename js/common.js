@@ -264,11 +264,14 @@ $(document).ready(function() {
 
     function fancyboxinit() {
 
-/*		waterwheel.find(".b-pictures-article").attr("rel", "mainpage-gallery").each( function(i,e) {
+		if ($.fn.fancybox) {
 
-			$(this).attr("href", $(this).children(".b-pictures-article-entity").first().attr("src"));
-		}).fancybox();
-*/    }
+			waterwheel.find(".b-pictures-article").attr("rel", "mainpage-gallery").each( function(i,e) {
+
+				$(this).attr("href", $(this).children(".b-pictures-article-entity").first().attr("src"));
+			}).fancybox();
+		}
+    }
 
 });
 
@@ -278,7 +281,6 @@ $(document).ready(function() {
 
 		var events = $(".afisha").find(".afisha__item");
 		var pages = Math.ceil((events.length + 1) / 4);
-		console.log(pages);
 		var page = { wrapper: false, before: false, after: false, allExceptFirstClass: false };
 		var last = 0;
 
@@ -1052,11 +1054,18 @@ var rotatorsProperties = {
 
         animation: "displaying"
     }, 
-    "loges-gallery": {
+	"loges-gallery": {
 
-        animation: "displaying", 
- 		positionsPointsCurrentAdditionalClass: "b-offers-article-pictures-collection-guide-current-clause"
-   }
+		animation: "displaying", 
+		positionsPointsCurrentAdditionalClass: "b-offers-article-pictures-collection-guide-current-clause"
+	}, 
+	"index-promo": {
+
+		animation: "displaying", 
+		positionsPointsCurrentAdditionalClass: "b-promos-collection-guide-current-clause", 
+		automation: true, 
+		automationInterval: 3000
+	}
 };
 
 function initializeRotators() {
@@ -1181,6 +1190,7 @@ function initializeRotators() {
 				$(this).children("[data-rotator-points-article-link]").click( function(evt) {
 
 					evt.preventDefault();
+					rotators[rotatorID].automationPaused = true;
 					hurlRotator(rotatorID, index);
 				});
 			})

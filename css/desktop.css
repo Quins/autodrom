@@ -1430,9 +1430,6 @@ button::-moz-focus-inner {
 	.b-promos-collection .b-promos-collection-guide {
 
 		display: block;
-		width: 100%;
-		margin: 0 -90px;
-		position: absolute;
 		bottom: 0;
 		text-align: center;
 		font-size: 0;
@@ -1607,9 +1604,9 @@ a.b-white-button:hover {
 		position: relative;
 		cursor: pointer;
 	}
-	.b-pictures-collection .b-pictures-current-article {
+	.b-pictures-collection .b-pictures-current-article:hover {
 
-		cursor: auto;
+		cursor: pointer;
 	}
 
 		.b-pictures-collection .b-pictures-article .b-pictures-article-entity {
@@ -1636,6 +1633,11 @@ a.b-white-button:hover {
 			line-height: 34px;
 			color: #fff;
 			background: rgba(0,0,0,.75);
+		}
+
+		.b-pictures-collection .b-pictures-current-article .b-pictures-article-title:empty {
+
+			display: none;
 		}
 
 .b-rotating-pictures-collection {
