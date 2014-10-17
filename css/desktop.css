@@ -1430,9 +1430,12 @@ button::-moz-focus-inner {
 	.b-promos-collection .b-promos-collection-guide {
 
 		display: block;
+		width: 100%;
+		position: absolute;
 		bottom: 0;
 		text-align: center;
 		font-size: 0;
+		box-sizing: border-box;
 		padding: 10px 0;
 	}
 
@@ -3124,6 +3127,13 @@ a.b-white-button:hover {
 		max-width: 1300px;
 	}
 
+	.l-content .error-page {
+
+		width: auto;
+		max-width: 1250px;
+		margin: 0 auto;
+	}
+
 	.l-content .page__title_image {
 
 		top: 0;
@@ -3178,6 +3188,11 @@ a.b-white-button:hover {
 	.l-content .event-list__item {
 
 		margin: 0 0 40px;
+	}
+
+	.l-content .event-list__item:nth-of-type(3) {
+
+		display: none;
 	}
 
 		.l-content .event {}
@@ -3656,7 +3671,42 @@ a.b-white-button:hover {
 	margin: 0;
 	font-size: 0;
 	line-height: 237px;
+	position: relative;
 }
+
+	.afisha .b-afisha-roller {
+
+		position: absolute;
+		width: 60px;
+		top: 0;
+		bottom: 0;
+		opacity: 1;
+		transition: .4s;
+	}
+
+		.afisha .b-afisha-roller:hover {
+
+			opacity: .6;
+			transition: .4s;
+		}
+
+	.afisha .b-afisha-forward-roller {
+
+		right: -60px;
+	}
+
+		.afisha .b-afisha-forward-roller:after {
+
+			content: '';
+			display: block;
+			width: 30px;
+			height: 48px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -24px 0 0 -15px;
+			background: url(../i/graphics.png) -280px 0 no-repeat;
+		}
 
 	.l-content .b-afisha-page .afisha__item, 
 	.l-content .afisha__item {
@@ -3849,6 +3899,11 @@ a.b-white-button:hover {
 
 	position: relative;
 	top: auto;
+}
+
+.l-content .news._horiz {
+
+	display: none;
 }
 
 /* Animation */

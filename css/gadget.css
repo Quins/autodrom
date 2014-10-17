@@ -570,6 +570,11 @@
 	width: 54px;
 }
 
+	.l-content .error-page {
+
+		max-width: 990px;
+	}
+
 }
 
 @media (max-width: 1180px) {
@@ -1137,6 +1142,11 @@
 	display: none;
 }
 
+	.l-content .error-page {
+
+		padding: 0 17px 20px;
+	}
+
 #sideNavBox {
 
 	display: none;
@@ -1437,12 +1447,30 @@
 	margin: 0 -17px;
 }
 
+	.afisha .b-afisha-roller {
+
+		display: none;
+	}
+
+	.afisha .b-afisha-page {
+
+		display: block !important;
+	}
+
 	.l-content .afisha__item {
 
 		margin: 0 0 10px;
 	}
 
+	.l-content .afisha__item.b-afisha-item-top-left {
+
+		border-radius: 5px 0 0 5px;
+	}
 	.l-content .afisha__item.b-afisha-item-top-right {
+
+		border-radius: 0 5px 5px 0;
+	}
+	.l-content .afisha__item.b-afisha-item-bottom-left {
 
 		border-radius: 5px 0 0 5px;
 	}
@@ -1895,6 +1923,7 @@
 
 .l-content .afisha {}
 
+	.l-content .b-afisha-page .afisha__item, 
 	.l-content .afisha__item {
 
 		width: 100%;

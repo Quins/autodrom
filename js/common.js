@@ -293,7 +293,7 @@ $(document).ready(function() {
 
 				wrapper: $("<section />", { class: "b-afisha-page" }),
 				before: false, 
-				after: $("<a />", { href: "#", class: "b-afisha-page-roller b-afisha-page-forward-roller" }), 
+				after: false, 
 				allExceptFirstClass: "g-hidden"
 			}
 		}
@@ -339,6 +339,23 @@ $(document).ready(function() {
 				eslice.eq(3).addClass("b-afisha-item-bottom-right");
 			}
 		};
+
+		var nextButton = $("<a />", { href: "#", class: "b-afisha-roller b-afisha-forward-roller" });
+		if (pages > 1)
+			$(".afisha").append(nextButton);
+		nextButton.click( function(event) {
+
+			event.preventDefault();
+
+			var afishaPages = $(".b-afisha-page");
+			var currentPage = $(".b-afisha-page").index($(".b-afisha-page:not(.g-hidden)"));
+			var nextPage = ( currentPage + 1 < $(".b-afisha-page").length ? currentPage + 1 : 0 );
+			afishaPages.eq(currentPage).fadeOut(350, function() {
+
+				$(this).addClass("g-hidden");
+				afishaPages.eq(nextPage).hide().removeClass("g-hidden").fadeIn(350);
+			});
+		});
 	}
 
 /* No magic after this sign, please */
@@ -1064,7 +1081,7 @@ var rotatorsProperties = {
 		animation: "displaying", 
 		positionsPointsCurrentAdditionalClass: "b-promos-collection-guide-current-clause", 
 		automation: true, 
-		automationInterval: 3000
+		automationInterval: 8000
 	}
 };
 
