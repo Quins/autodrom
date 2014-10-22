@@ -194,6 +194,11 @@ $(document).ready(function() {
     if ($("[data-accordion]").length)
         initializeAccordions();
 
+    $( "[data-datepicker]" ).datepicker({
+
+    	"dateFormat": "dd/mm/yy"
+    });
+
     $("[data-screen]").screens({
 
     	"secondary": {
