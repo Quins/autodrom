@@ -575,6 +575,12 @@
 		max-width: 990px;
 	}
 
+.b-massmedia-form .b-form-fieldset .b-form-fieldset-description {
+
+	display: block;
+	padding: 10px 0;
+}
+
 }
 
 @media (max-width: 1180px) {
