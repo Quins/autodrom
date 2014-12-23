@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	if($('#social-stream').length) {
+	if($('#social-stream').length && $.fn.dcSocialStream) {
 		
 		$('#social-stream').dcSocialStream({
 			feeds: {
@@ -33,13 +33,16 @@ $(document).ready(function() {
 
 	$("[data-counter]").counter("12/10/2014 11:00 UTC");
 
-	var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
+	if ($.fn.waterwheelCarousel) {
+		var waterwheel = $("[data-waterwheelcarousel]").waterwheelCarousel({
 
-		activeClassName: "b-pictures-current-article",
-		separation: parseInt($("[data-waterwheelcarousel]").width() / 6),
-		forcedImageWidth: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? $("[data-waterwheelcarousel]").width() : parseInt($("[data-waterwheelcarousel]").height() * 1.5)),
-		forcedImageHeight: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? parseInt(2 * $("[data-waterwheelcarousel]").width() / 3) : parseInt($("[data-waterwheelcarousel]").height()))
-	});
+			activeClassName: "b-pictures-current-article",
+			separation: parseInt($("[data-waterwheelcarousel]").width() / 6),
+			forcedImageWidth: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? $("[data-waterwheelcarousel]").width() : parseInt($("[data-waterwheelcarousel]").height() * 1.5)),
+			forcedImageHeight: ( parseInt($("[data-waterwheelcarousel]").height() * 1.5) > $("[data-waterwheelcarousel]").width() ? parseInt(2 * $("[data-waterwheelcarousel]").width() / 3) : parseInt($("[data-waterwheelcarousel]").height()))
+		});
+	} else 
+		var waterwheel = $("[data-waterwheelcarousel]");
 
     fancyboxinit();
 
@@ -194,10 +197,12 @@ $(document).ready(function() {
     if ($("[data-accordion]").length)
         initializeAccordions();
 
-    $( "[data-datepicker]" ).datepicker({
+    if ($.fn.datepicker) {
+	    $( "[data-datepicker]" ).datepicker({
 
-    	"dateFormat": "dd/mm/yy"
-    });
+	    	"dateFormat": "dd/mm/yy"
+	    });
+	}
 
     $("[data-screen]").screens({
 
